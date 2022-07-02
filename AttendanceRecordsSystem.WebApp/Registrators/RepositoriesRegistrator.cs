@@ -1,23 +1,35 @@
 ﻿using AttendanceRecordsSystem.Domain.Core;
 using AttendanceRecordsSystem.Domain.Interfaces;
-using AttendanceRecordsSystem.Infrastructure.Data.Repositories;
+using AttendanceRecordsSystem.Infrastructure.Data.Repositories.Commands;
+using AttendanceRecordsSystem.Infrastructure.Data.Repositories.Queries;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+
 
 namespace AttendanceRecordsSystem.WebApp.Registrators
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public static class RepositoriesRegistrator
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="services"></param>
+        /// <returns></returns>
         public static IServiceCollection AddRepositories(this IServiceCollection services)
         {
-            return services.AddScoped<IRepository<Student>, StudentsRepository>()
-                           .AddScoped<IRepository<Lector>, LectorsRepository>()
-                           .AddScoped<IRepository<Lection>, LectionsRepository>()
-                           .AddScoped<IRepository<StudentsGroup>, StudentsGroupsRepository>();
+            return services.AddScoped<IQueriesRepository<Student>, StudentsQueriesRepository>()
+                           .AddScoped<ICommandsRepository<Student>, StudentsCommandsRepository>()
 
+                           .AddScoped<IQueriesRepository<Lector>, LectorsQueriesRepository>()
+                           .AddScoped<ICommandsRepository<Lector>, LectorsCommandsRepository>()
+
+                           .AddScoped<IQueriesRepository<Lection>, LectionsQueriesRepository>()
+                           .AddScoped<ICommandsRepository<Lection>, LectionsCommandsRepository>()
+
+                           .AddScoped<IQueriesRepository<StudentsGroup>, StudentsGroupsQueriesRepository>()
+                           .AddScoped<ICommandsRepository<StudentsGroup>, StudentsGroupsCommandsRepository>();
         }
     }
 }

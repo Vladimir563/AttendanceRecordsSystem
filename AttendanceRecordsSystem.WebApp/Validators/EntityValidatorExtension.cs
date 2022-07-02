@@ -11,12 +11,12 @@ namespace AttendanceRecordsSystem.WebApp.Validators
     public static class EntityValidatorExtension
     {
         /// <summary>
-        /// This method validate entity and throw the ValidationException if the validation result has failures
+        /// This method validate entity
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="validator"></param>
         /// <param name="entity"></param>
-        public static void ValidateEntity<T>(this IValidator<T> validator, T entity)
+        public static string ValidateEntity<T>(this IValidator<T> validator, T entity)
         {
             ValidationResult results = validator.Validate(entity);
 
@@ -26,10 +26,11 @@ namespace AttendanceRecordsSystem.WebApp.Validators
             {
                 foreach (var failure in results.Errors)
                 {
-                    validationErrorsSb.AppendLine("Property " + failure.PropertyName + " failed validation. Error was: " + failure.ErrorMessage);
+                    validationErrorsSb.AppendLine("Свойство " + failure.PropertyName + " не прошло валидацию. Ошибка: " + failure.ErrorMessage);
                 }
-                throw new ValidationException(validationErrorsSb.ToString());
             }
+
+            return validationErrorsSb.ToString();
         }
     }
 }

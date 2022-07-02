@@ -6,10 +6,18 @@ namespace AttendanceRecordsSystem.Domain.Interfaces
 {
     public interface IUnitOfWork : IDisposable
     {
-        IRepository<Student> Students { get; }
-        IRepository<Lector> Lectors { get; }
-        IRepository<Lection> Lections { get; }
-        IRepository<StudentsGroup> StudentsGroups { get; }
+        IQueriesRepository<Student> StudentsQueries { get; }
+        ICommandsRepository<Student> StudentsCommands { get; }
+
+        IQueriesRepository<Lector> LectorsQueries { get; }
+        ICommandsRepository<Lector> LectorsCommands { get; }
+
+        IQueriesRepository<Lection> LectionsQueries { get; }
+        ICommandsRepository<Lection> LectionsCommands { get; }
+
+        IQueriesRepository<StudentsGroup> StudentsGroupsQueries { get; }
+        ICommandsRepository<StudentsGroup> StudentsGroupsCommands { get; }
+
         void Save();
     }
 }

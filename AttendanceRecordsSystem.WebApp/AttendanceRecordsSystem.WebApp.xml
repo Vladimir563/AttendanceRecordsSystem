@@ -4,21 +4,80 @@
         <name>AttendanceRecordsSystem.WebApp</name>
     </assembly>
     <members>
-        <member name="M:AttendanceRecordsSystem.WebApp.Controllers.LectorController.CreateLector(System.String,System.String,System.String,System.Int32[])">
+        <member name="T:AttendanceRecordsSystem.WebApp.Controllers.LectorController">
+            <summary>
+            Контроллер для манипуляций с моделью лектора
+            </summary>
+        </member>
+        <member name="M:AttendanceRecordsSystem.WebApp.Controllers.LectorController.#ctor(AutoMapper.IMapper,AttendanceRecordsSystem.Domain.Interfaces.IQueriesRepository{AttendanceRecordsSystem.Domain.Core.Lector},AttendanceRecordsSystem.Domain.Interfaces.ICommandsRepository{AttendanceRecordsSystem.Domain.Core.Lector},FluentValidation.IValidator{AttendanceRecordsSystem.Domain.Core.Lector})">
+            <summary>
+            
+            </summary>
+            <param name="mapper"></param>
+            <param name="lectorsQueriesRepository"></param>
+            <param name="lectorsCommandsRepository"></param>
+            <param name="validator"></param>
+        </member>
+        <member name="M:AttendanceRecordsSystem.WebApp.Controllers.LectorController.CreateLector(System.String,System.String,System.String,System.Collections.Generic.IEnumerable{AttendanceRecordsSystem.Domain.Core.Lection})">
             <summary>
             Добавление нового лектора
             </summary>
-            <param name="fName"></param>
-            <param name="lName"></param>
-            <param name="patr"></param>
-            <param name="lectionIds"></param>
+            <param name="fName">Имя</param>
+            <param name="lName">Фамилия</param>
+            <param name="patr">Отчество</param>
+            <param name="lections">Список лекций</param>
             <returns></returns>
+        </member>
+        <member name="M:AttendanceRecordsSystem.WebApp.Controllers.LectorController.UpdateLector(AttendanceRecordsSystem.Domain.Core.Lector,System.Int32)">
+            <summary>
+            Обновление лектора
+            </summary>
+            <param name="newLector">Новый лектор</param>
+            <param name="id">Id лектора для обновления</param>
+        </member>
+        <member name="M:AttendanceRecordsSystem.WebApp.Controllers.LectorController.DeleteLector(System.Int32)">
+            <summary>
+            Удаление лектора
+            </summary>
+            <param name="id">Id лектора для удаления</param>
         </member>
         <member name="M:AttendanceRecordsSystem.WebApp.Controllers.LectorController.GetLector(System.Int32)">
             <summary>
             Получение лектора по id
             </summary>
             <param name="id">Id лектора</param>
+            <returns></returns>
+        </member>
+        <member name="T:AttendanceRecordsSystem.WebApp.Mappings.MappingProfile">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AttendanceRecordsSystem.WebApp.Mappings.MappingProfile.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:AttendanceRecordsSystem.WebApp.Models.LectorModel">
+            <summary>
+            Модель данных лектора
+            </summary>
+        </member>
+        <member name="P:AttendanceRecordsSystem.WebApp.Models.LectorModel.Lections">
+            <summary>
+            Список лекций которые проводит лектор
+            </summary>
+        </member>
+        <member name="T:AttendanceRecordsSystem.WebApp.Registrators.RepositoriesRegistrator">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AttendanceRecordsSystem.WebApp.Registrators.RepositoriesRegistrator.AddRepositories(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            
+            </summary>
+            <param name="services"></param>
             <returns></returns>
         </member>
         <member name="T:AttendanceRecordsSystem.WebApp.Validators.EntityValidatorExtension">
@@ -28,11 +87,71 @@
         </member>
         <member name="M:AttendanceRecordsSystem.WebApp.Validators.EntityValidatorExtension.ValidateEntity``1(FluentValidation.IValidator{``0},``0)">
             <summary>
-            This method validate entity and throw the ValidationException if the validation result has failures
+            This method validate entity
             </summary>
             <typeparam name="T"></typeparam>
             <param name="validator"></param>
             <param name="entity"></param>
+        </member>
+        <member name="T:AttendanceRecordsSystem.WebApp.Validators.ValidationMessageGenerator">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AttendanceRecordsSystem.WebApp.Validators.ValidationMessageGenerator.GetCreateSuccessMessage(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="entityName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AttendanceRecordsSystem.WebApp.Validators.ValidationMessageGenerator.GetCreateFailureMessage(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="entityName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AttendanceRecordsSystem.WebApp.Validators.ValidationMessageGenerator.GetFindFailureMessage(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="entityName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AttendanceRecordsSystem.WebApp.Validators.ValidationMessageGenerator.GetUpdateSuccessMessage(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="entityName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AttendanceRecordsSystem.WebApp.Validators.ValidationMessageGenerator.GetDeleteSuccessMessage(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="entityName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AttendanceRecordsSystem.WebApp.Validators.ValidationMessageGenerator.GetUpdateFailureMessage(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="entityName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AttendanceRecordsSystem.WebApp.Validators.ValidationMessageGenerator.GetDeleteFailureMessage(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="entityName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AttendanceRecordsSystem.WebApp.Validators.ValidationMessageGenerator.GetValidateFailureMessage">
+            <summary>
+            
+            </summary>
+            <returns></returns>
         </member>
     </members>
 </doc>

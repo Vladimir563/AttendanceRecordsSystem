@@ -1,5 +1,7 @@
 ﻿using AttendanceRecordsSystem.Domain.Core;
 using AttendanceRecordsSystem.Domain.Interfaces;
+using AttendanceRecordsSystem.Infrastructure.Data.Repositories.Commands;
+using AttendanceRecordsSystem.Infrastructure.Data.Repositories.Queries;
 using System;
 
 
@@ -7,58 +9,124 @@ namespace AttendanceRecordsSystem.Infrastructure.Data.Repositories
 {
     public class EFUnitOfWork : IUnitOfWork
     {
+        private bool disposed = false;
+
         private AttendanceRecordsSystemContext _db;
 
-        private StudentsRepository _studentsRepository;
-        private LectorsRepository _lectorsRepository;
-        private LectionsRepository _lectionsRepository;
-        private StudentsGroupsRepository _studentsGroupsRepository;
+        private StudentsQueriesRepository _studentsQueriesRepository;
+        private StudentsCommandsRepository _studentsCommandsRepository;
+
+        private LectorsQueriesRepository _lectorsQueriesRepository;
+        private LectorsCommandsRepository _lectorsCommandsRepository;
+
+        private LectionsQueriesRepository _lectionsQueriesRepository;
+        private LectionsCommandsRepository _lectionsCommandsRepository;
+
+        private StudentsGroupsQueriesRepository _studentsGroupsQueriesRepository;
+        private StudentsGroupsCommandsRepository _studentsGroupsCommandsRepository;
 
         public EFUnitOfWork(AttendanceRecordsSystemContext context)
         {
             _db = context;
         }
 
-        public IRepository<Student> Students
+        #region Queries
+
+        public IQueriesRepository<Student> StudentsQueries
         {
             get
             {
-                if (_studentsRepository == null)
-                    _studentsRepository = new StudentsRepository(_db);
-                return _studentsRepository;
+                if (_studentsQueriesRepository == null)
+                    _studentsQueriesRepository = new StudentsQueriesRepository(_db);
+                return _studentsQueriesRepository;
             }
         }
-        public IRepository<Lector> Lectors
+
+        public IQueriesRepository<Lector> LectorsQueries
         {
             get
             {
-                if (_lectorsRepository == null)
-                    _lectorsRepository = new LectorsRepository(_db);
-                return _lectorsRepository;
+                if (_lectorsQueriesRepository == null)
+                    _lectorsQueriesRepository = new LectorsQueriesRepository(_db);
+                return _lectorsQueriesRepository;
             }
         }
-        public IRepository<Lection> Lections
+
+        public IQueriesRepository<Lection> LectionsQueries
         {
             get
             {
-                if (_lectionsRepository == null)
-                    _lectionsRepository = new LectionsRepository(_db);
-                return _lectionsRepository;
+                if (_lectionsQueriesRepository == null)
+                    _lectionsQueriesRepository = new LectionsQueriesRepository(_db);
+                return _lectionsQueriesRepository;
             }
         }
-        public IRepository<StudentsGroup> StudentsGroups
+
+        public IQueriesRepository<StudentsGroup> StudentsGroupsQueries
         {
             get
             {
-                if (_studentsGroupsRepository == null)
-                    _studentsGroupsRepository = new StudentsGroupsRepository(_db);
-                return _studentsGroupsRepository;
+                if (_studentsGroupsQueriesRepository == null)
+                    _studentsGroupsQueriesRepository = new StudentsGroupsQueriesRepository(_db);
+                return _studentsGroupsQueriesRepository;
             }
         }
+
+        #endregion
+
+
+        #region Commands
+
+        public ICommandsRepository<Student> StudentsCommands
+        {
+            get
+            {
+                if (_studentsCommandsRepository == null)
+                    _studentsCommandsRepository = new StudentsCommandsRepository(_db);
+                return _studentsCommandsRepository;
+            }
+        }
+
+        public ICommandsRepository<Lector> LectorsCommands
+        {
+            get
+            {
+                if (_lectorsCommandsRepository == null)
+                    _lectorsCommandsRepository = new LectorsCommandsRepository(_db);
+                return _lectorsCommandsRepository;
+            }
+        }
+
+        public ICommandsRepository<Lection> LectionsCommands
+        {
+            get
+            {
+                if (_lectionsCommandsRepository == null)
+                    _lectionsCommandsRepository = new LectionsCommandsRepository(_db);
+                return _lectionsCommandsRepository;
+            }
+        }
+
+        public ICommandsRepository<StudentsGroup> StudentsGroupsCommands
+        {
+            get
+            {
+                if (_studentsGroupsCommandsRepository == null)
+                    _studentsGroupsCommandsRepository = new StudentsGroupsCommandsRepository(_db);
+                return _studentsGroupsCommandsRepository;
+            }
+        }
+
+        #endregion
+
 
         public void Save() => _db.SaveChanges();
 
-        private bool disposed = false;
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
 
         public virtual void Dispose(bool disposing)
         {
@@ -70,12 +138,6 @@ namespace AttendanceRecordsSystem.Infrastructure.Data.Repositories
                 }
                 disposed = true;
             }
-        }
-
-        public void Dispose()
-        {
-            Dispose(true);
-            GC.SuppressFinalize(this);
         }
     }
 }

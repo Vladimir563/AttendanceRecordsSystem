@@ -5,50 +5,107 @@ using AttendanceRecordsSystem.WebApp.Validators;
 using AutoMapper;
 using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
-
+using System.Collections.Generic;
+using System.Linq;
 
 namespace AttendanceRecordsSystem.WebApp.Controllers
 {
+    /// <summary>
+    /// Контроллер для манипуляций с моделью лектора
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class LectorController : Controller
     {
         private readonly IMapper _mapper;
-        private readonly IRepository<Lector> _lectorsRepository;
+        private readonly IQueriesRepository<Lector> _lectorsQueriesRepository;
+        private readonly ICommandsRepository<Lector> _lectorsCommandsRepository;
         private readonly IValidator<Lector> _validator;
 
-         public LectorController(IMapper mapper, IRepository<Lector> lectorsRepository, IValidator<Lector> validator)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="mapper"></param>
+        /// <param name="lectorsQueriesRepository"></param>
+        /// <param name="lectorsCommandsRepository"></param>
+        /// <param name="validator"></param>
+         public LectorController(IMapper mapper, IQueriesRepository<Lector> lectorsQueriesRepository, 
+             ICommandsRepository<Lector> lectorsCommandsRepository, IValidator<Lector> validator)
         {
-            _lectorsRepository = lectorsRepository;
-            _validator = validator;
+            _lectorsQueriesRepository = lectorsQueriesRepository;
+            _lectorsCommandsRepository = lectorsCommandsRepository;
             _mapper = mapper;
+            _validator = validator;
         }
 
         /// <summary>
         /// Добавление нового лектора
         /// </summary>
-        /// <param name="fName"></param>
-        /// <param name="lName"></param>
-        /// <param name="patr"></param>
-        /// <param name="lectionIds"></param>
+        /// <param name="fName">Имя</param>
+        /// <param name="lName">Фамилия</param>
+        /// <param name="patr">Отчество</param>
+        /// <param name="lections">Список лекций</param>
         /// <returns></returns>
         [HttpPost]
-        public LectorModel CreateLector(string fName, string lName, string patr, int[] lectionIds)
+        public IActionResult CreateLector(string fName, string lName, string patr, IEnumerable<Lection> lections)
         {
             Lector lector = new Lector()
             {
                 FirstName = fName,
                 LastName = lName,
-                Patronymic = patr
+                Patronymic = patr,
+                Lections = lections.ToList()
             };
 
-            _validator.ValidateEntity(lector);
+            string validationErrors =_validator.ValidateEntity(lector);
 
-            _lectorsRepository.Create(lector);
+            if (string.IsNullOrEmpty(validationErrors) == false) 
+            {
+                return BadRequest($"{ValidationMessageGenerator.GetValidateFailureMessage()}: \n{validationErrors}");
+            }
+
+            _lectorsCommandsRepository.Create(lector);
 
             LectorModel lectorModel = _mapper.Map<LectorModel>(lector);
 
-            return lectorModel;
+            return Ok($"{ValidationMessageGenerator.GetCreateSuccessMessage("Лектор")} \n{Json(lectorModel)}");
+        }
+
+        /// <summary>
+        /// Обновление лектора
+        /// </summary>
+        /// <param name="newLector">Новый лектор</param>
+        /// <param name="id">Id лектора для обновления</param>
+        [HttpPut]
+        public IActionResult UpdateLector(Lector newLector, int id)
+        {
+            Lector lector = _lectorsQueriesRepository.Get(id);
+
+            if (lector is null) 
+            {
+                return NotFound(ValidationMessageGenerator.GetFindFailureMessage("Лектор"));
+            }
+
+            lector = newLector;
+
+            return Ok($"{ValidationMessageGenerator.GetUpdateSuccessMessage("Лектор")} \n{Json(lector)}");
+        }
+
+        /// <summary>
+        /// Удаление лектора
+        /// </summary>
+        /// <param name="id">Id лектора для удаления</param>
+        [HttpDelete]
+        public IActionResult DeleteLector(int id)
+        {
+            Lector lector = _lectorsQueriesRepository.Get(id);
+
+            if (lector is null) 
+            {
+                return NotFound(ValidationMessageGenerator.GetDeleteFailureMessage("Лектор"));
+            }
+
+            return Ok(ValidationMessageGenerator.GetDeleteSuccessMessage("Лектор"));
         }
 
         /// <summary>
@@ -57,15 +114,16 @@ namespace AttendanceRecordsSystem.WebApp.Controllers
         /// <param name="id">Id лектора</param>
         /// <returns></returns>
         [HttpGet]
-        public LectorModel GetLector(int id) => _mapper.Map<LectorModel>(_lectorsRepository.Get(id));
-
-
-        [HttpPut]
-        public void UpdateLector(Lector newLector, int id)
+        public IActionResult GetLector(int id) 
         {
-            Lector lector = _lectorsRepository.Get(id);
+            Lector lector = _lectorsQueriesRepository.Get(id);
 
-            lector = newLector;
-        }
+            if (lector is null)
+            {
+                return NotFound(ValidationMessageGenerator.GetFindFailureMessage("Лектор"));
+            }
+
+            return Ok(Json(_mapper.Map<LectorModel>(_lectorsQueriesRepository.Get(id))));
+        } 
     }
 }

@@ -1,17 +1,14 @@
 ﻿using AttendanceRecordsSystem.Domain.Core;
 using AttendanceRecordsSystem.Domain.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 
 
-namespace AttendanceRecordsSystem.Infrastructure.Data.Repositories
+namespace AttendanceRecordsSystem.Infrastructure.Data.Repositories.Commands
 {
-    public class LectionsRepository : IRepository<Lection>
+    public class LectionsCommandsRepository : ICommandsRepository<Lection>
     {
         private AttendanceRecordsSystemContext _db;
 
-        public LectionsRepository(AttendanceRecordsSystemContext context)
+        public LectionsCommandsRepository(AttendanceRecordsSystemContext context)
         {
             _db = context;
         }
@@ -25,13 +22,7 @@ namespace AttendanceRecordsSystem.Infrastructure.Data.Repositories
                 _db.Lections.Remove(lect);
         }
 
-        public IEnumerable<Lection> Find(Func<Lection, bool> predicate) => _db.Lections.Where(predicate).ToList();
-
-        public Lection Get(int id) => _db.Lections.Find(id);
-
-        public IEnumerable<Lection> GetAll() => _db.Lections;
-
-        public void Update(Lection newLection, int id) 
+        public void Update(Lection newLection, int id)
         {
             Lection lection = _db.Lections.Find(id);
 

@@ -5,8 +5,14 @@ using AutoMapper;
 
 namespace AttendanceRecordsSystem.WebApp.Mappings
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class MappingProfile : Profile
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public MappingProfile()
         {
             CreateMap<Student, StudentModel>()
