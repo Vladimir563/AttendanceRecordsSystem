@@ -4,4 +4,8 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\AttendanceRecordsSystem.Services.Interfaces\AttendanceRecordsSystem.Services.Interfaces.csproj" />
+  </ItemGroup>
+
 </Project>

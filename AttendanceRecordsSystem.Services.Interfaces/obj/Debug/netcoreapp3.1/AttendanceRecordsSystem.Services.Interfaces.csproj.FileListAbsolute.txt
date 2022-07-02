@@ -1,7 +1,6 @@
 D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Services.Interfaces\bin\Debug\netcoreapp3.1\AttendanceRecordsSystem.Services.Interfaces.deps.json
 D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Services.Interfaces\bin\Debug\netcoreapp3.1\AttendanceRecordsSystem.Services.Interfaces.dll
 D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Services.Interfaces\bin\Debug\netcoreapp3.1\AttendanceRecordsSystem.Services.Interfaces.pdb
-D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Services.Interfaces\obj\Debug\netcoreapp3.1\AttendanceRecordsSystem.Services.Interfaces.csproj.AssemblyReference.cache
 D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Services.Interfaces\obj\Debug\netcoreapp3.1\AttendanceRecordsSystem.Services.Interfaces.GeneratedMSBuildEditorConfig.editorconfig
 D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Services.Interfaces\obj\Debug\netcoreapp3.1\AttendanceRecordsSystem.Services.Interfaces.AssemblyInfoInputs.cache
 D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Services.Interfaces\obj\Debug\netcoreapp3.1\AttendanceRecordsSystem.Services.Interfaces.AssemblyInfo.cs
