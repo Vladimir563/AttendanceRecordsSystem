@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "Ayym1zKvi6LWNQHE6Vw5pgnuhIp8ICTlKjmCepkv/kvp4mDDBWZjkzgN4FEk2Rc8spYEAm4nl6WE2Yah9BlrnQ==",
+  "success": true,
+  "projectFilePath": "D:\\VSProjects\\Astone\\AttendanceRecordsSystem\\AttendanceRecordsSystem.WebApp\\AttendanceRecordsSystem.WebApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\vladi\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.25\\microsoft.netcore.app.host.win-x64.3.1.25.nupkg.sha512"
+  ],
+  "logs": []
+}
