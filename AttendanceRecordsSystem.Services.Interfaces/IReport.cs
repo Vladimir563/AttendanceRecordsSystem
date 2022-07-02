@@ -1,7 +1,7 @@
 ﻿using System;
 
 
-namespace AttendanceRecordsSystem.Services.Interfaces
+namespace AttendanceRecordsSystem.Services
 {
     /// <summary>
     /// This inteface declare approach of getting a report of the students attendance

@@ -1,0 +1,13 @@
+D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Infrastructure.Business\bin\Debug\netcoreapp3.1\AttendanceRecordsSystem.Infrastructure.Business.deps.json
+D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Infrastructure.Business\bin\Debug\netcoreapp3.1\AttendanceRecordsSystem.Infrastructure.Business.dll
+D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Infrastructure.Business\bin\Debug\netcoreapp3.1\AttendanceRecordsSystem.Infrastructure.Business.pdb
+D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Infrastructure.Business\bin\Debug\netcoreapp3.1\AttendanceRecordsSystem.Services.Interfaces.dll
+D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Infrastructure.Business\bin\Debug\netcoreapp3.1\AttendanceRecordsSystem.Services.Interfaces.pdb
+D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Infrastructure.Business\obj\Debug\netcoreapp3.1\AttendanceRecordsSystem.Infrastructure.Business.csproj.AssemblyReference.cache
+D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Infrastructure.Business\obj\Debug\netcoreapp3.1\AttendanceRecordsSystem.Infrastructure.Business.GeneratedMSBuildEditorConfig.editorconfig
+D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Infrastructure.Business\obj\Debug\netcoreapp3.1\AttendanceRecordsSystem.Infrastructure.Business.AssemblyInfoInputs.cache
+D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Infrastructure.Business\obj\Debug\netcoreapp3.1\AttendanceRecordsSystem.Infrastructure.Business.AssemblyInfo.cs
+D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Infrastructure.Business\obj\Debug\netcoreapp3.1\AttendanceRecordsSystem.Infrastructure.Business.csproj.CoreCompileInputs.cache
+D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Infrastructure.Business\obj\Debug\netcoreapp3.1\AttendanceRecordsSystem.Infrastructure.Business.csproj.CopyComplete
+D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Infrastructure.Business\obj\Debug\netcoreapp3.1\AttendanceRecordsSystem.Infrastructure.Business.dll
+D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Infrastructure.Business\obj\Debug\netcoreapp3.1\AttendanceRecordsSystem.Infrastructure.Business.pdb

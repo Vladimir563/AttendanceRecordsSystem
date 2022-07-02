@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "AttendanceRecordsSystem.Infrastructure.Business/1.0.0": {
+        "dependencies": {
+          "AttendanceRecordsSystem.Services.Interfaces": "1.0.0"
+        },
+        "runtime": {
+          "AttendanceRecordsSystem.Infrastructure.Business.dll": {}
+        }
+      },
+      "AttendanceRecordsSystem.Services.Interfaces/1.0.0": {
+        "runtime": {
+          "AttendanceRecordsSystem.Services.Interfaces.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "AttendanceRecordsSystem.Infrastructure.Business/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AttendanceRecordsSystem.Services.Interfaces/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

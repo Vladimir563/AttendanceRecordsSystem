@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AttendanceRecordsSystem.WebApp</name>
+    </assembly>
+    <members>
+        <member name="M:AttendanceRecordsSystem.WebApp.Controllers.LectorController.CreateLector(System.String,System.String,System.String,System.Int32[])">
+            <summary>
+            Добавление нового лектора
+            </summary>
+            <param name="fName"></param>
+            <param name="lName"></param>
+            <param name="patr"></param>
+            <param name="lectionIds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AttendanceRecordsSystem.WebApp.Controllers.LectorController.GetLector(System.Int32)">
+            <summary>
+            Получение лектора по id
+            </summary>
+            <param name="id">Id лектора</param>
+            <returns></returns>
+        </member>
+        <member name="T:AttendanceRecordsSystem.WebApp.Validators.EntityValidatorExtension">
+            <summary>
+            The extension method of the ASTON.STUDENT_ATTENDANCE_SYSTEM.BLL validator
+            </summary>
+        </member>
+        <member name="M:AttendanceRecordsSystem.WebApp.Validators.EntityValidatorExtension.ValidateEntity``1(FluentValidation.IValidator{``0},``0)">
+            <summary>
+            This method validate entity and throw the ValidationException if the validation result has failures
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="validator"></param>
+            <param name="entity"></param>
+        </member>
+    </members>
+</doc>
