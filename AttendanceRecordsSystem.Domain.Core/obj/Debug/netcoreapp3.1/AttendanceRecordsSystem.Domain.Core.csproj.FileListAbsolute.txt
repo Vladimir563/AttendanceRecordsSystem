@@ -1,0 +1,10 @@
+D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Domain.Core\bin\Debug\netcoreapp3.1\AttendanceRecordsSystem.Domain.Core.deps.json
+D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Domain.Core\bin\Debug\netcoreapp3.1\AttendanceRecordsSystem.Domain.Core.dll
+D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Domain.Core\bin\Debug\netcoreapp3.1\AttendanceRecordsSystem.Domain.Core.pdb
+D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Domain.Core\obj\Debug\netcoreapp3.1\AttendanceRecordsSystem.Domain.Core.csproj.AssemblyReference.cache
+D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Domain.Core\obj\Debug\netcoreapp3.1\AttendanceRecordsSystem.Domain.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Domain.Core\obj\Debug\netcoreapp3.1\AttendanceRecordsSystem.Domain.Core.AssemblyInfoInputs.cache
+D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Domain.Core\obj\Debug\netcoreapp3.1\AttendanceRecordsSystem.Domain.Core.AssemblyInfo.cs
+D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Domain.Core\obj\Debug\netcoreapp3.1\AttendanceRecordsSystem.Domain.Core.csproj.CoreCompileInputs.cache
+D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Domain.Core\obj\Debug\netcoreapp3.1\AttendanceRecordsSystem.Domain.Core.dll
+D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Domain.Core\obj\Debug\netcoreapp3.1\AttendanceRecordsSystem.Domain.Core.pdb

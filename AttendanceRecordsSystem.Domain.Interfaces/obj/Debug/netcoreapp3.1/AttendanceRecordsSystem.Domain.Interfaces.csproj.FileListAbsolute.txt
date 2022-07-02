@@ -1,0 +1,13 @@
+D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Domain.Interfaces\bin\Debug\netcoreapp3.1\AttendanceRecordsSystem.Domain.Interfaces.deps.json
+D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Domain.Interfaces\bin\Debug\netcoreapp3.1\AttendanceRecordsSystem.Domain.Interfaces.dll
+D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Domain.Interfaces\bin\Debug\netcoreapp3.1\AttendanceRecordsSystem.Domain.Interfaces.pdb
+D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Domain.Interfaces\bin\Debug\netcoreapp3.1\AttendanceRecordsSystem.Domain.Core.dll
+D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Domain.Interfaces\bin\Debug\netcoreapp3.1\AttendanceRecordsSystem.Domain.Core.pdb
+D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Domain.Interfaces\obj\Debug\netcoreapp3.1\AttendanceRecordsSystem.Domain.Interfaces.csproj.AssemblyReference.cache
+D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Domain.Interfaces\obj\Debug\netcoreapp3.1\AttendanceRecordsSystem.Domain.Interfaces.GeneratedMSBuildEditorConfig.editorconfig
+D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Domain.Interfaces\obj\Debug\netcoreapp3.1\AttendanceRecordsSystem.Domain.Interfaces.AssemblyInfoInputs.cache
+D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Domain.Interfaces\obj\Debug\netcoreapp3.1\AttendanceRecordsSystem.Domain.Interfaces.AssemblyInfo.cs
+D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Domain.Interfaces\obj\Debug\netcoreapp3.1\AttendanceRecordsSystem.Domain.Interfaces.csproj.CoreCompileInputs.cache
+D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Domain.Interfaces\obj\Debug\netcoreapp3.1\AttendanceRecordsSystem.Domain.Interfaces.csproj.CopyComplete
+D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Domain.Interfaces\obj\Debug\netcoreapp3.1\AttendanceRecordsSystem.Domain.Interfaces.dll
+D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Domain.Interfaces\obj\Debug\netcoreapp3.1\AttendanceRecordsSystem.Domain.Interfaces.pdb

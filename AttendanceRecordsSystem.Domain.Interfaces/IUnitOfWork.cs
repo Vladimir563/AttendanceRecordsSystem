@@ -1,4 +1,4 @@
-﻿using AttendanceRecordsSystem.Domain.Core.Models;
+﻿using AttendanceRecordsSystem.Domain.Core;
 using System;
 
 
