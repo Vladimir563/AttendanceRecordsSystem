@@ -4,6 +4,7 @@ using AttendanceRecordsSystem.WebApp.Models;
 using AttendanceRecordsSystem.WebApp.Validators;
 using AutoMapper;
 using FluentValidation;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
@@ -113,7 +114,7 @@ namespace AttendanceRecordsSystem.WebApp.Controllers
         /// </summary>
         /// <param name="id">Id лектора</param>
         /// <returns></returns>
-        [HttpGet]
+        [HttpGet, Authorize]
         public IActionResult GetLector(int id) 
         {
             Lector lector = _lectorsQueriesRepository.Get(id);
