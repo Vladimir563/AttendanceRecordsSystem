@@ -4,6 +4,7 @@ using AttendanceRecordsSystem.WebApp.Models;
 using AttendanceRecordsSystem.WebApp.Validators;
 using AutoMapper;
 using FluentValidation;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -14,8 +15,10 @@ namespace AttendanceRecordsSystem.WebApp.Controllers
     /// <summary>
     /// Контроллер для манипуляций с моделью лектора
     /// </summary>
-    [Route("api/[controller]")]
     [ApiController]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+    //[Route("api/[controller]")]
+    [Route("api/[controller]")]
     public class LectorController : Controller
     {
         private readonly IMapper _mapper;
@@ -114,7 +117,7 @@ namespace AttendanceRecordsSystem.WebApp.Controllers
         /// </summary>
         /// <param name="id">Id лектора</param>
         /// <returns></returns>
-        [HttpGet, Authorize]
+        [HttpGet]
         public IActionResult GetLector(int id) 
         {
             Lector lector = _lectorsQueriesRepository.Get(id);

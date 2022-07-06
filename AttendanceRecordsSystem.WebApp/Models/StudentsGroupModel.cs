@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-
+#pragma warning disable CS1591
 namespace AttendanceRecordsSystem.WebApp.Models
 {
     public class StudentsGroupModel

@@ -1,23 +1,17 @@
-using AttendanceRecordsSystem.Domain.Interfaces;
 using AttendanceRecordsSystem.Infrastructure.Data;
-using AttendanceRecordsSystem.Infrastructure.Data.Repositories;
 using AttendanceRecordsSystem.WebApp.Registrators;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.OpenApi.Models;
 using Serilog;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Threading.Tasks;
+using AttendanceRecordsSystem.WebApp.Authentication;
+using System.Text;
 
+
+#pragma warning disable CS1591
 namespace AttendanceRecordsSystem.WebApp
 {
     public class Startup
@@ -29,13 +23,9 @@ namespace AttendanceRecordsSystem.WebApp
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
+
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc(p => p.EnableEndpointRouting = false);
-
-            services.AddRazorPages();
-
             services.AddDbContext<AttendanceRecordsSystemContext>();
 
             services.AddServices()
@@ -46,47 +36,18 @@ namespace AttendanceRecordsSystem.WebApp
 
             services.AddControllers();
 
-            services.AddSwaggerGen(options =>
-            {
-                options.SwaggerDoc("v1", new OpenApiInfo
-                {
-                    Version = "v1",
-                    Title = "Student attendance system API",
-                    Description = "An ASP.NET Core Web API for students attendance tracking",
-                    Contact = new OpenApiContact
-                    {
-                        Name = "Vladimir Fominykh",
-                        Url = new Uri("https://github.com/Vladimir563")
-                    }
-                });
-                options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
-                {
-                    In = ParameterLocation.Header,
-                    Description = "Please enter token",
-                    Name = "Authorization",
-                    Type = SecuritySchemeType.Http,
-                    BearerFormat = "JWT",
-                    Scheme = "bearer"
-                });
-                options.AddSecurityRequirement(new OpenApiSecurityRequirement
-                {
-                    {
-                        new OpenApiSecurityScheme
-                        {
-                            Reference = new OpenApiReference
-                            {
-                                Type=ReferenceType.SecurityScheme,
-                                Id="Bearer"
-                            }
-                        },
-                        new string[]{}
-                    }
-                });
+            IConfigurationSection settingsSection = Configuration.GetSection("AppSettings");
+            AppSettings settings = settingsSection.Get<AppSettings>();
+            byte[] signingKey = Encoding.UTF8.GetBytes(settings.EncryptionKey);
+            services.AddAuthentication(signingKey);
 
-                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-                options.IncludeXmlComments(xmlPath);
-            });
+            services.AddSwaggerDocumentation();
+
+            services.Configure<AppSettings>(settingsSection);
+            services.AddTransient<UserRepository>();
+            services.AddTransient<UserService>();
+            services.AddTransient<AuthenticationService>();
+            services.AddTransient<TokenService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -97,8 +58,7 @@ namespace AttendanceRecordsSystem.WebApp
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI();
+
             }
             else
             {
@@ -107,22 +67,18 @@ namespace AttendanceRecordsSystem.WebApp
                 app.UseHsts();
             }
 
-            app.UseMvc();
-
-            app.UseHttpsRedirection();
-            app.UseStaticFiles();
-
             app.UseRouting();
 
             app.UseAuthorization();
 
             app.UseSerilogRequestLogging();
 
-            app.UseSwaggerUI(options =>
+            app.UseEndpoints(endpoints =>
             {
-                options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
-                options.RoutePrefix = string.Empty;
+                endpoints.MapControllers();
             });
+
+            app.UseSwaggerDocumentation();
         }
     }
 }

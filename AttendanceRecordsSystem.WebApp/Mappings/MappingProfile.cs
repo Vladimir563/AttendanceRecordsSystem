@@ -2,17 +2,11 @@
 using AttendanceRecordsSystem.WebApp.Models;
 using AutoMapper;
 
-
+#pragma warning disable CS1591
 namespace AttendanceRecordsSystem.WebApp.Mappings
 {
-    /// <summary>
-    /// 
-    /// </summary>
     public class MappingProfile : Profile
     {
-        /// <summary>
-        /// 
-        /// </summary>
         public MappingProfile()
         {
             CreateMap<Student, StudentModel>()

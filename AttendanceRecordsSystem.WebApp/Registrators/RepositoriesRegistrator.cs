@@ -4,19 +4,11 @@ using AttendanceRecordsSystem.Infrastructure.Data.Repositories.Commands;
 using AttendanceRecordsSystem.Infrastructure.Data.Repositories.Queries;
 using Microsoft.Extensions.DependencyInjection;
 
-
+#pragma warning disable CS1591
 namespace AttendanceRecordsSystem.WebApp.Registrators
 {
-    /// <summary>
-    /// 
-    /// </summary>
     public static class RepositoriesRegistrator
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="services"></param>
-        /// <returns></returns>
         public static IServiceCollection AddRepositories(this IServiceCollection services)
         {
             return services.AddScoped<IQueriesRepository<Student>, StudentsQueriesRepository>()

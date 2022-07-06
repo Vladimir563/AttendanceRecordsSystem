@@ -3,7 +3,7 @@ using AttendanceRecordsSystem.WebApp.Validators;
 using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 
-
+#pragma warning disable CS1591
 namespace AttendanceRecordsSystem.WebApp.Registrators
 {
     public static class ValidatorsRegistrator

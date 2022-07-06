@@ -4,6 +4,28 @@
         <name>AttendanceRecordsSystem.WebApp</name>
     </assembly>
     <members>
+        <member name="T:AttendanceRecordsSystem.WebApp.Controllers.Authentication.AuthenticationController">
+            <summary>
+            Provides authentication for users.
+            </summary>
+        </member>
+        <member name="M:AttendanceRecordsSystem.WebApp.Controllers.Authentication.AuthenticationController.#ctor(AttendanceRecordsSystem.WebApp.Authentication.AuthenticationService)">
+            <summary>
+            Constructs the controller state by initializing the `authenticationService` field.
+            </summary>
+            <param name="authenticationService">Provides authentication for a user.</param>
+        </member>
+        <member name="M:AttendanceRecordsSystem.WebApp.Controllers.Authentication.AuthenticationController.Authenticate(AttendanceRecordsSystem.WebApp.Authentication.UserCredentials)">
+            <summary>
+            Authenticate the requested user.
+            </summary>
+            <param name="userCredentials">The requested user for authentication.</param>
+            <returns>The generated Bearer Token if the authentication succeeds, otherwise returns
+            a client or server error.</returns>
+            <response code="200">If the authentication succeeds.</response>
+            <response code="401">If the authentication fails.</response>
+            <response code="500">If an exception is thrown.</response>
+        </member>
         <member name="T:AttendanceRecordsSystem.WebApp.Controllers.LectorController">
             <summary>
             Контроллер для манипуляций с моделью лектора
@@ -48,38 +70,6 @@
             <param name="id">Id лектора</param>
             <returns></returns>
         </member>
-        <member name="T:AttendanceRecordsSystem.WebApp.Mappings.MappingProfile">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:AttendanceRecordsSystem.WebApp.Mappings.MappingProfile.#ctor">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="T:AttendanceRecordsSystem.WebApp.Models.LectorModel">
-            <summary>
-            Модель данных лектора
-            </summary>
-        </member>
-        <member name="P:AttendanceRecordsSystem.WebApp.Models.LectorModel.Lections">
-            <summary>
-            Список лекций которые проводит лектор
-            </summary>
-        </member>
-        <member name="T:AttendanceRecordsSystem.WebApp.Registrators.RepositoriesRegistrator">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:AttendanceRecordsSystem.WebApp.Registrators.RepositoriesRegistrator.AddRepositories(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
-            <summary>
-            
-            </summary>
-            <param name="services"></param>
-            <returns></returns>
-        </member>
         <member name="T:AttendanceRecordsSystem.WebApp.Validators.EntityValidatorExtension">
             <summary>
             The extension method of the ASTON.STUDENT_ATTENDANCE_SYSTEM.BLL validator
@@ -92,66 +82,6 @@
             <typeparam name="T"></typeparam>
             <param name="validator"></param>
             <param name="entity"></param>
-        </member>
-        <member name="T:AttendanceRecordsSystem.WebApp.Validators.ValidationMessageGenerator">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:AttendanceRecordsSystem.WebApp.Validators.ValidationMessageGenerator.GetCreateSuccessMessage(System.String)">
-            <summary>
-            
-            </summary>
-            <param name="entityName"></param>
-            <returns></returns>
-        </member>
-        <member name="M:AttendanceRecordsSystem.WebApp.Validators.ValidationMessageGenerator.GetCreateFailureMessage(System.String)">
-            <summary>
-            
-            </summary>
-            <param name="entityName"></param>
-            <returns></returns>
-        </member>
-        <member name="M:AttendanceRecordsSystem.WebApp.Validators.ValidationMessageGenerator.GetFindFailureMessage(System.String)">
-            <summary>
-            
-            </summary>
-            <param name="entityName"></param>
-            <returns></returns>
-        </member>
-        <member name="M:AttendanceRecordsSystem.WebApp.Validators.ValidationMessageGenerator.GetUpdateSuccessMessage(System.String)">
-            <summary>
-            
-            </summary>
-            <param name="entityName"></param>
-            <returns></returns>
-        </member>
-        <member name="M:AttendanceRecordsSystem.WebApp.Validators.ValidationMessageGenerator.GetDeleteSuccessMessage(System.String)">
-            <summary>
-            
-            </summary>
-            <param name="entityName"></param>
-            <returns></returns>
-        </member>
-        <member name="M:AttendanceRecordsSystem.WebApp.Validators.ValidationMessageGenerator.GetUpdateFailureMessage(System.String)">
-            <summary>
-            
-            </summary>
-            <param name="entityName"></param>
-            <returns></returns>
-        </member>
-        <member name="M:AttendanceRecordsSystem.WebApp.Validators.ValidationMessageGenerator.GetDeleteFailureMessage(System.String)">
-            <summary>
-            
-            </summary>
-            <param name="entityName"></param>
-            <returns></returns>
-        </member>
-        <member name="M:AttendanceRecordsSystem.WebApp.Validators.ValidationMessageGenerator.GetValidateFailureMessage">
-            <summary>
-            
-            </summary>
-            <returns></returns>
         </member>
     </members>
 </doc>

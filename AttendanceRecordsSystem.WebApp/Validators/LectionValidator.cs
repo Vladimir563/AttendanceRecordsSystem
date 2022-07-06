@@ -1,7 +1,7 @@
 ﻿using AttendanceRecordsSystem.Domain.Core;
 using FluentValidation;
 
-
+#pragma warning disable CS1591
 namespace AttendanceRecordsSystem.WebApp.Validators
 {
     public class LectionValidator : AbstractValidator<Lection>
