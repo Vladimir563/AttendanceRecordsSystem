@@ -17,27 +17,23 @@ namespace AttendanceRecordsSystem.WebApp.Controllers
     /// </summary>
     [ApiController]
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-    //[Route("api/[controller]")]
     [Route("api/[controller]")]
     public class LectorController : Controller
     {
         private readonly IMapper _mapper;
-        private readonly IQueriesRepository<Lector> _lectorsQueriesRepository;
-        private readonly ICommandsRepository<Lector> _lectorsCommandsRepository;
+        private readonly IUnitOfWork _repository;
         private readonly IValidator<Lector> _validator;
 
+
         /// <summary>
-        /// 
+        /// Конструктор
         /// </summary>
         /// <param name="mapper"></param>
-        /// <param name="lectorsQueriesRepository"></param>
-        /// <param name="lectorsCommandsRepository"></param>
+        /// <param name="repository"></param>
         /// <param name="validator"></param>
-         public LectorController(IMapper mapper, IQueriesRepository<Lector> lectorsQueriesRepository, 
-             ICommandsRepository<Lector> lectorsCommandsRepository, IValidator<Lector> validator)
+        public LectorController(IMapper mapper, IUnitOfWork repository, IValidator<Lector> validator)
         {
-            _lectorsQueriesRepository = lectorsQueriesRepository;
-            _lectorsCommandsRepository = lectorsCommandsRepository;
+            _repository = repository;
             _mapper = mapper;
             _validator = validator;
         }
@@ -68,7 +64,7 @@ namespace AttendanceRecordsSystem.WebApp.Controllers
                 return BadRequest($"{ValidationMessageGenerator.GetValidateFailureMessage()}: \n{validationErrors}");
             }
 
-            _lectorsCommandsRepository.Create(lector);
+            _repository.LectorsCommands.Create(lector);
 
             LectorModel lectorModel = _mapper.Map<LectorModel>(lector);
 
@@ -83,14 +79,14 @@ namespace AttendanceRecordsSystem.WebApp.Controllers
         [HttpPut]
         public IActionResult UpdateLector(Lector newLector, int id)
         {
-            Lector lector = _lectorsQueriesRepository.Get(id);
+            Lector lector = _repository.LectorsQueries.Get(id);
 
             if (lector is null) 
             {
                 return NotFound(ValidationMessageGenerator.GetFindFailureMessage("Лектор"));
             }
 
-            lector = newLector;
+            _repository.LectorsCommands.Update(newLector, id);
 
             return Ok($"{ValidationMessageGenerator.GetUpdateSuccessMessage("Лектор")} \n{Json(lector)}");
         }
@@ -102,12 +98,14 @@ namespace AttendanceRecordsSystem.WebApp.Controllers
         [HttpDelete]
         public IActionResult DeleteLector(int id)
         {
-            Lector lector = _lectorsQueriesRepository.Get(id);
+            Lector lector = _repository.LectorsQueries.Get(id);
 
             if (lector is null) 
             {
                 return NotFound(ValidationMessageGenerator.GetDeleteFailureMessage("Лектор"));
             }
+
+            _repository.LectorsCommands.Delete(id);
 
             return Ok(ValidationMessageGenerator.GetDeleteSuccessMessage("Лектор"));
         }
@@ -120,14 +118,14 @@ namespace AttendanceRecordsSystem.WebApp.Controllers
         [HttpGet]
         public IActionResult GetLector(int id) 
         {
-            Lector lector = _lectorsQueriesRepository.Get(id);
+            Lector lector = _repository.LectorsQueries.Get(id);
 
             if (lector is null)
             {
                 return NotFound(ValidationMessageGenerator.GetFindFailureMessage("Лектор"));
             }
 
-            return Ok(Json(_mapper.Map<LectorModel>(_lectorsQueriesRepository.Get(id))));
+            return Ok(Json(_mapper.Map<LectorModel>(_repository.LectorsQueries.Get(id))));
         } 
     }
 }

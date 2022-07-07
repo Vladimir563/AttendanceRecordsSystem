@@ -15,14 +15,14 @@ namespace AttendanceRecordsSystem.WebApp.Authentication
             {
                 new User
                 {
-                    Username = "john.doe",
-                    Password = "john.password",
+                    Username = "vladimir35",
+                    Password = "123321",
                     Roles = new []{"User"}
                 },
                 new User
                 {
-                    Username = "jane.doe",
-                    Password = "jane.password",
+                    Username = "veta28",
+                    Password = "111",
                     Roles = new []{"User", "Admin"}
                 }
             };

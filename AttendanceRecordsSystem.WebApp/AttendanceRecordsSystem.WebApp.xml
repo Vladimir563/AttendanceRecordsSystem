@@ -26,18 +26,59 @@
             <response code="401">If the authentication fails.</response>
             <response code="500">If an exception is thrown.</response>
         </member>
+        <member name="T:AttendanceRecordsSystem.WebApp.Controllers.LectionController">
+            <summary>
+            Контроллер для манипуляций с моделью лекции
+            </summary>
+        </member>
+        <member name="M:AttendanceRecordsSystem.WebApp.Controllers.LectionController.#ctor(AutoMapper.IMapper,AttendanceRecordsSystem.Domain.Interfaces.IUnitOfWork,FluentValidation.IValidator{AttendanceRecordsSystem.Domain.Core.Lection})">
+            <summary>
+            Конструктор
+            </summary>
+            <param name="mapper"></param>
+            <param name="repository"></param>
+            <param name="validator"></param>
+        </member>
+        <member name="M:AttendanceRecordsSystem.WebApp.Controllers.LectionController.CreateLection(System.String,System.DateTime,System.Int32)">
+            <summary>
+            Добавление новой лекции
+            </summary>
+            <param name="title"></param>
+            <param name="date"></param>
+            <param name="lectorId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AttendanceRecordsSystem.WebApp.Controllers.LectionController.UpdateLection(AttendanceRecordsSystem.Domain.Core.Lection,System.Int32)">
+            <summary>
+            Обновление лекции
+            </summary>
+            <param name="newLection">Новая лекция</param>
+            <param name="id">Id лекции для обновления</param>
+        </member>
+        <member name="M:AttendanceRecordsSystem.WebApp.Controllers.LectionController.DeleteLection(System.Int32)">
+            <summary>
+            Удаление лекции
+            </summary>
+            <param name="id">Id лекции для удаления</param>
+        </member>
+        <member name="M:AttendanceRecordsSystem.WebApp.Controllers.LectionController.GetLection(System.Int32)">
+            <summary>
+            Получение лекции по id
+            </summary>
+            <param name="id">Id лекции</param>
+            <returns></returns>
+        </member>
         <member name="T:AttendanceRecordsSystem.WebApp.Controllers.LectorController">
             <summary>
             Контроллер для манипуляций с моделью лектора
             </summary>
         </member>
-        <member name="M:AttendanceRecordsSystem.WebApp.Controllers.LectorController.#ctor(AutoMapper.IMapper,AttendanceRecordsSystem.Domain.Interfaces.IQueriesRepository{AttendanceRecordsSystem.Domain.Core.Lector},AttendanceRecordsSystem.Domain.Interfaces.ICommandsRepository{AttendanceRecordsSystem.Domain.Core.Lector},FluentValidation.IValidator{AttendanceRecordsSystem.Domain.Core.Lector})">
+        <member name="M:AttendanceRecordsSystem.WebApp.Controllers.LectorController.#ctor(AutoMapper.IMapper,AttendanceRecordsSystem.Domain.Interfaces.IUnitOfWork,FluentValidation.IValidator{AttendanceRecordsSystem.Domain.Core.Lector})">
             <summary>
-            
+            Конструктор
             </summary>
             <param name="mapper"></param>
-            <param name="lectorsQueriesRepository"></param>
-            <param name="lectorsCommandsRepository"></param>
+            <param name="repository"></param>
             <param name="validator"></param>
         </member>
         <member name="M:AttendanceRecordsSystem.WebApp.Controllers.LectorController.CreateLector(System.String,System.String,System.String,System.Collections.Generic.IEnumerable{AttendanceRecordsSystem.Domain.Core.Lection})">
@@ -68,6 +109,88 @@
             Получение лектора по id
             </summary>
             <param name="id">Id лектора</param>
+            <returns></returns>
+        </member>
+        <member name="T:AttendanceRecordsSystem.WebApp.Controllers.StudentController">
+            <summary>
+            Контроллер для манипуляций с моделью студента
+            </summary>
+        </member>
+        <member name="M:AttendanceRecordsSystem.WebApp.Controllers.StudentController.#ctor(AutoMapper.IMapper,AttendanceRecordsSystem.Domain.Interfaces.IUnitOfWork,FluentValidation.IValidator{AttendanceRecordsSystem.Domain.Core.Student})">
+            <summary>
+            Конструктор
+            </summary>
+            <param name="mapper"></param>
+            <param name="repository"></param>
+            <param name="validator"></param>
+        </member>
+        <member name="M:AttendanceRecordsSystem.WebApp.Controllers.StudentController.CreateStudent(System.String,System.String,System.Int32)">
+            <summary>
+            Добавление нового студента
+            </summary>
+            <param name="fName"></param>
+            <param name="lName"></param>
+            <param name="groupId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AttendanceRecordsSystem.WebApp.Controllers.StudentController.UpdateStudent(AttendanceRecordsSystem.Domain.Core.Student,System.Int32)">
+            <summary>
+            Обновление студента
+            </summary>
+            <param name="newStudent">Новый студент</param>
+            <param name="id">Id студента для обновления</param>
+        </member>
+        <member name="M:AttendanceRecordsSystem.WebApp.Controllers.StudentController.DeleteStudent(System.Int32)">
+            <summary>
+            Удаление студента
+            </summary>
+            <param name="id">Id студента для удаления</param>
+        </member>
+        <member name="M:AttendanceRecordsSystem.WebApp.Controllers.StudentController.GetStudent(System.Int32)">
+            <summary>
+            Получение студента по id
+            </summary>
+            <param name="id">Id студента</param>
+            <returns></returns>
+        </member>
+        <member name="T:AttendanceRecordsSystem.WebApp.Controllers.StudentsGroupController">
+            <summary>
+            Контроллер для манипуляций с моделью группы студентов
+            </summary>
+        </member>
+        <member name="M:AttendanceRecordsSystem.WebApp.Controllers.StudentsGroupController.#ctor(AutoMapper.IMapper,AttendanceRecordsSystem.Domain.Interfaces.IUnitOfWork,FluentValidation.IValidator{AttendanceRecordsSystem.Domain.Core.StudentsGroup})">
+            <summary>
+            Конструктор
+            </summary>
+            <param name="mapper"></param>
+            <param name="repository"></param>
+            <param name="validator"></param>
+        </member>
+        <member name="M:AttendanceRecordsSystem.WebApp.Controllers.StudentsGroupController.CreateStudentsGroup(System.String)">
+            <summary>
+            Добавление новой группы студентов
+            </summary>
+            <param name="groupName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AttendanceRecordsSystem.WebApp.Controllers.StudentsGroupController.UpdateStudentsGroup(AttendanceRecordsSystem.Domain.Core.StudentsGroup,System.Int32)">
+            <summary>
+            Обновление группы студентов
+            </summary>
+            <param name="newStudentsGroup">Новая группа студентов</param>
+            <param name="id">Id группы студентов для обновления</param>
+        </member>
+        <member name="M:AttendanceRecordsSystem.WebApp.Controllers.StudentsGroupController.DeleteStudentsGroup(System.Int32)">
+            <summary>
+            Удаление группы студентов
+            </summary>
+            <param name="id">Id группы студентов для удаления</param>
+        </member>
+        <member name="M:AttendanceRecordsSystem.WebApp.Controllers.StudentsGroupController.GetStudentsGroup(System.Int32)">
+            <summary>
+            Получение группы студентов по id
+            </summary>
+            <param name="id">Id группы студентов</param>
             <returns></returns>
         </member>
         <member name="T:AttendanceRecordsSystem.WebApp.Validators.EntityValidatorExtension">
