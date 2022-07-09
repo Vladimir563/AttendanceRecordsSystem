@@ -10,7 +10,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace AttendanceRecordsSystem.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(AttendanceRecordsSystemContext))]
-    [Migration("20220709140116_InitialMigration")]
+    [Migration("20220709141145_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -26,7 +26,7 @@ namespace AttendanceRecordsSystem.Infrastructure.Data.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
-                        .HasAnnotation("Npgsql:IdentitySequenceOptions", "'17', '1', '', '', 'False', '1'")
+                        .HasAnnotation("Npgsql:IdentitySequenceOptions", "'13', '1', '', '', 'False', '1'")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityAlwaysColumn);
 
                     b.Property<DateTime>("Date")
@@ -60,34 +60,34 @@ namespace AttendanceRecordsSystem.Infrastructure.Data.Migrations
                             LectorId = 1,
                             Mark = 4,
                             StudentId = 1,
-                            Tittle = "Math"
+                            Tittle = "Математика"
                         },
                         new
                         {
                             Id = 2,
                             Date = new DateTime(2022, 3, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LectorId = 1,
-                            Mark = 2,
-                            StudentId = 2,
-                            Tittle = "Math"
+                            Mark = 4,
+                            StudentId = 3,
+                            Tittle = "Математика"
                         },
                         new
                         {
                             Id = 3,
                             Date = new DateTime(2022, 3, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LectorId = 1,
-                            Mark = 4,
-                            StudentId = 3,
-                            Tittle = "Math"
+                            Mark = 5,
+                            StudentId = 4,
+                            Tittle = "Математика"
                         },
                         new
                         {
                             Id = 4,
-                            Date = new DateTime(2022, 3, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2022, 3, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LectorId = 1,
                             Mark = 5,
-                            StudentId = 4,
-                            Tittle = "Math"
+                            StudentId = 1,
+                            Tittle = "Физика"
                         },
                         new
                         {
@@ -95,17 +95,17 @@ namespace AttendanceRecordsSystem.Infrastructure.Data.Migrations
                             Date = new DateTime(2022, 3, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LectorId = 1,
                             Mark = 5,
-                            StudentId = 1,
-                            Tittle = "Physics"
+                            StudentId = 2,
+                            Tittle = "Физика"
                         },
                         new
                         {
                             Id = 6,
                             Date = new DateTime(2022, 3, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LectorId = 1,
-                            Mark = 5,
-                            StudentId = 2,
-                            Tittle = "Physics"
+                            Mark = 3,
+                            StudentId = 3,
+                            Tittle = "Физика"
                         },
                         new
                         {
@@ -113,89 +113,53 @@ namespace AttendanceRecordsSystem.Infrastructure.Data.Migrations
                             Date = new DateTime(2022, 3, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LectorId = 1,
                             Mark = 3,
-                            StudentId = 3,
-                            Tittle = "Physics"
+                            StudentId = 4,
+                            Tittle = "Физика"
                         },
                         new
                         {
                             Id = 8,
-                            Date = new DateTime(2022, 3, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LectorId = 1,
+                            Date = new DateTime(2022, 3, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LectorId = 2,
                             Mark = 3,
-                            StudentId = 4,
-                            Tittle = "Physics"
+                            StudentId = 1,
+                            Tittle = "Философия"
                         },
                         new
                         {
                             Id = 9,
                             Date = new DateTime(2022, 3, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LectorId = 2,
-                            Mark = 3,
-                            StudentId = 1,
-                            Tittle = "Philosophy"
+                            Mark = 4,
+                            StudentId = 4,
+                            Tittle = "Философия"
                         },
                         new
                         {
                             Id = 10,
-                            Date = new DateTime(2022, 3, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LectorId = 2,
-                            Mark = 4,
-                            StudentId = 2,
-                            Tittle = "Philosophy"
-                        },
-                        new
-                        {
-                            Id = 11,
-                            Date = new DateTime(2022, 3, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LectorId = 2,
-                            Mark = 4,
-                            StudentId = 3,
-                            Tittle = "Philosophy"
-                        },
-                        new
-                        {
-                            Id = 12,
-                            Date = new DateTime(2022, 3, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LectorId = 2,
-                            Mark = 4,
-                            StudentId = 4,
-                            Tittle = "Philosophy"
-                        },
-                        new
-                        {
-                            Id = 13,
-                            Date = new DateTime(2022, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LectorId = 2,
-                            Mark = 4,
-                            StudentId = 1,
-                            Tittle = "Literature"
-                        },
-                        new
-                        {
-                            Id = 14,
                             Date = new DateTime(2022, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LectorId = 2,
                             Mark = 3,
                             StudentId = 2,
-                            Tittle = "Literature"
+                            Tittle = "Литература"
                         },
                         new
                         {
-                            Id = 15,
+                            Id = 11,
                             Date = new DateTime(2022, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LectorId = 2,
                             Mark = 5,
                             StudentId = 3,
-                            Tittle = "Literature"
+                            Tittle = "Литература"
                         },
                         new
                         {
-                            Id = 16,
+                            Id = 12,
                             Date = new DateTime(2022, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LectorId = 2,
                             Mark = 2,
                             StudentId = 4,
-                            Tittle = "Literature"
+                            Tittle = "Литература"
                         });
                 });
 
@@ -224,16 +188,16 @@ namespace AttendanceRecordsSystem.Infrastructure.Data.Migrations
                         new
                         {
                             Id = 1,
-                            FirstName = "Irina",
-                            LastName = "Sakharova",
-                            Patronymic = "Petrovna"
+                            FirstName = "Ирина",
+                            LastName = "Сахарова",
+                            Patronymic = "Петровна"
                         },
                         new
                         {
                             Id = 2,
-                            FirstName = "Ivan",
-                            LastName = "Lopatin",
-                            Patronymic = "Denisovich"
+                            FirstName = "Иван",
+                            LastName = "Лопатин",
+                            Patronymic = "Денисович"
                         });
                 });
 
@@ -248,15 +212,15 @@ namespace AttendanceRecordsSystem.Infrastructure.Data.Migrations
                     b.Property<string>("FirstName")
                         .HasColumnType("text");
 
-                    b.Property<int>("GroupId")
-                        .HasColumnType("integer");
-
                     b.Property<string>("LastName")
                         .HasColumnType("text");
 
+                    b.Property<int>("StudentsGroupId")
+                        .HasColumnType("integer");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("GroupId");
+                    b.HasIndex("StudentsGroupId");
 
                     b.ToTable("Students");
 
@@ -264,30 +228,30 @@ namespace AttendanceRecordsSystem.Infrastructure.Data.Migrations
                         new
                         {
                             Id = 1,
-                            FirstName = "Olga",
-                            GroupId = 1,
-                            LastName = "Laskina"
+                            FirstName = "Ольга",
+                            LastName = "Ласкина",
+                            StudentsGroupId = 1
                         },
                         new
                         {
                             Id = 2,
-                            FirstName = "Tamara",
-                            GroupId = 1,
-                            LastName = "Komarova"
+                            FirstName = "Тамара",
+                            LastName = "Комарова",
+                            StudentsGroupId = 1
                         },
                         new
                         {
                             Id = 3,
-                            FirstName = "Vladimir",
-                            GroupId = 2,
-                            LastName = "Semenov"
+                            FirstName = "Владимир",
+                            LastName = "Семёнов",
+                            StudentsGroupId = 2
                         },
                         new
                         {
                             Id = 4,
-                            FirstName = "Igor",
-                            GroupId = 2,
-                            LastName = "Onisiev"
+                            FirstName = "Игорь",
+                            LastName = "Онисьев",
+                            StudentsGroupId = 2
                         });
                 });
 
@@ -299,7 +263,7 @@ namespace AttendanceRecordsSystem.Infrastructure.Data.Migrations
                         .HasAnnotation("Npgsql:IdentitySequenceOptions", "'3', '1', '', '', 'False', '1'")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityAlwaysColumn);
 
-                    b.Property<string>("GroupName")
+                    b.Property<string>("Name")
                         .HasColumnType("text");
 
                     b.HasKey("Id");
@@ -310,12 +274,12 @@ namespace AttendanceRecordsSystem.Infrastructure.Data.Migrations
                         new
                         {
                             Id = 1,
-                            GroupName = "A1"
+                            Name = "А1"
                         },
                         new
                         {
                             Id = 2,
-                            GroupName = "A2"
+                            Name = "А2"
                         });
                 });
 
@@ -338,7 +302,7 @@ namespace AttendanceRecordsSystem.Infrastructure.Data.Migrations
                 {
                     b.HasOne("AttendanceRecordsSystem.Domain.Core.StudentsGroup", "Group")
                         .WithMany("Students")
-                        .HasForeignKey("GroupId")
+                        .HasForeignKey("StudentsGroupId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

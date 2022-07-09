@@ -84,7 +84,7 @@ namespace AttendanceRecordsSystem.WebApp.Controllers
             if (string.IsNullOrEmpty(groupName) == false) 
             {
                 reportDescription.AppendLine($"- для студентов из группы \"{groupName}\"");
-                lections = lections.Where(l => l.Student.Group.GroupName == groupName);
+                lections = lections.Where(l => l.Student.Group.Name == groupName);
             }
 
 
@@ -114,7 +114,7 @@ namespace AttendanceRecordsSystem.WebApp.Controllers
                 {
                     var studLection = s.AttendedLections.Find(o => o.Tittle == lection.title);
                     sb.AppendLine($"Лектор: {_mapper.Map<LectorModel>(studLection.Lector).FullName}, " +
-                        $"студент: {s.FirstName} {s.LastName} (группа {s.Group.GroupName}), оценка: {studLection.Mark}");
+                        $"студент: {s.FirstName} {s.LastName} (группа {s.Group.Name}), оценка: {studLection.Mark}");
                 }
 
                 sb.AppendLine("\n");

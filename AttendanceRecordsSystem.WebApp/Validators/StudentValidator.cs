@@ -11,7 +11,7 @@ namespace AttendanceRecordsSystem.WebApp.Validators
             RuleFor(x => x.Id).NotNull();
             RuleFor(x => x.FirstName).Length(0, 15);
             RuleFor(x => x.LastName).Length(0, 15);
-            RuleFor(x => x.GroupId).NotNull();
+            RuleFor(x => x.StudentsGroupId).NotNull();
             RuleFor(x => x.Group).NotNull();
         }
     }

@@ -31,7 +31,7 @@ namespace AttendanceRecordsSystem.Infrastructure.Data.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Npgsql:IdentitySequenceOptions", "'3', '1', '', '', 'False', '1'")
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityAlwaysColumn),
-                    GroupName = table.Column<string>(nullable: true)
+                    Name = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -47,14 +47,14 @@ namespace AttendanceRecordsSystem.Infrastructure.Data.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityAlwaysColumn),
                     FirstName = table.Column<string>(nullable: true),
                     LastName = table.Column<string>(nullable: true),
-                    GroupId = table.Column<int>(nullable: false)
+                    StudentsGroupId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Students", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Students_StudentsGroups_GroupId",
-                        column: x => x.GroupId,
+                        name: "FK_Students_StudentsGroups_StudentsGroupId",
+                        column: x => x.StudentsGroupId,
                         principalTable: "StudentsGroups",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -65,7 +65,7 @@ namespace AttendanceRecordsSystem.Infrastructure.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Npgsql:IdentitySequenceOptions", "'17', '1', '', '', 'False', '1'")
+                        .Annotation("Npgsql:IdentitySequenceOptions", "'13', '1', '', '', 'False', '1'")
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityAlwaysColumn),
                     Tittle = table.Column<string>(nullable: true),
                     Mark = table.Column<int>(nullable: false),
@@ -95,28 +95,28 @@ namespace AttendanceRecordsSystem.Infrastructure.Data.Migrations
                 columns: new[] { "Id", "FirstName", "LastName", "Patronymic" },
                 values: new object[,]
                 {
-                    { 1, "Irina", "Sakharova", "Petrovna" },
-                    { 2, "Ivan", "Lopatin", "Denisovich" }
+                    { 1, "Ирина", "Сахарова", "Петровна" },
+                    { 2, "Иван", "Лопатин", "Денисович" }
                 });
 
             migrationBuilder.InsertData(
                 table: "StudentsGroups",
-                columns: new[] { "Id", "GroupName" },
+                columns: new[] { "Id", "Name" },
                 values: new object[,]
                 {
-                    { 1, "A1" },
-                    { 2, "A2" }
+                    { 1, "А1" },
+                    { 2, "А2" }
                 });
 
             migrationBuilder.InsertData(
                 table: "Students",
-                columns: new[] { "Id", "FirstName", "GroupId", "LastName" },
+                columns: new[] { "Id", "FirstName", "LastName", "StudentsGroupId" },
                 values: new object[,]
                 {
-                    { 1, "Olga", 1, "Laskina" },
-                    { 2, "Tamara", 1, "Komarova" },
-                    { 3, "Vladimir", 2, "Semenov" },
-                    { 4, "Igor", 2, "Onisiev" }
+                    { 1, "Ольга", "Ласкина", 1 },
+                    { 2, "Тамара", "Комарова", 1 },
+                    { 3, "Владимир", "Семёнов", 2 },
+                    { 4, "Игорь", "Онисьев", 2 }
                 });
 
             migrationBuilder.InsertData(
@@ -124,22 +124,18 @@ namespace AttendanceRecordsSystem.Infrastructure.Data.Migrations
                 columns: new[] { "Id", "Date", "LectorId", "Mark", "StudentId", "Tittle" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2022, 3, 4, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, 4, 1, "Math" },
-                    { 5, new DateTime(2022, 3, 6, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, 5, 1, "Physics" },
-                    { 9, new DateTime(2022, 3, 8, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 3, 1, "Philosophy" },
-                    { 13, new DateTime(2022, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 4, 1, "Literature" },
-                    { 2, new DateTime(2022, 3, 4, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, 2, 2, "Math" },
-                    { 6, new DateTime(2022, 3, 6, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, 5, 2, "Physics" },
-                    { 10, new DateTime(2022, 3, 8, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 4, 2, "Philosophy" },
-                    { 14, new DateTime(2022, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 3, 2, "Literature" },
-                    { 3, new DateTime(2022, 3, 4, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, 4, 3, "Math" },
-                    { 7, new DateTime(2022, 3, 6, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, 3, 3, "Physics" },
-                    { 11, new DateTime(2022, 3, 8, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 4, 3, "Philosophy" },
-                    { 15, new DateTime(2022, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 5, 3, "Literature" },
-                    { 4, new DateTime(2022, 3, 4, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, 5, 4, "Math" },
-                    { 8, new DateTime(2022, 3, 6, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, 3, 4, "Physics" },
-                    { 12, new DateTime(2022, 3, 8, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 4, 4, "Philosophy" },
-                    { 16, new DateTime(2022, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 2, 4, "Literature" }
+                    { 1, new DateTime(2022, 3, 4, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, 4, 1, "Математика" },
+                    { 4, new DateTime(2022, 3, 6, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, 5, 1, "Физика" },
+                    { 8, new DateTime(2022, 3, 8, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 3, 1, "Философия" },
+                    { 5, new DateTime(2022, 3, 6, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, 5, 2, "Физика" },
+                    { 10, new DateTime(2022, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 3, 2, "Литература" },
+                    { 2, new DateTime(2022, 3, 4, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, 4, 3, "Математика" },
+                    { 6, new DateTime(2022, 3, 6, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, 3, 3, "Физика" },
+                    { 11, new DateTime(2022, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 5, 3, "Литература" },
+                    { 3, new DateTime(2022, 3, 4, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, 5, 4, "Математика" },
+                    { 7, new DateTime(2022, 3, 6, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, 3, 4, "Физика" },
+                    { 9, new DateTime(2022, 3, 8, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 4, 4, "Философия" },
+                    { 12, new DateTime(2022, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 2, 4, "Литература" }
                 });
 
             migrationBuilder.CreateIndex(
@@ -153,9 +149,9 @@ namespace AttendanceRecordsSystem.Infrastructure.Data.Migrations
                 column: "StudentId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Students_GroupId",
+                name: "IX_Students_StudentsGroupId",
                 table: "Students",
-                column: "GroupId");
+                column: "StudentsGroupId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

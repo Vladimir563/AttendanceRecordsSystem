@@ -51,7 +51,7 @@ namespace AttendanceRecordsSystem.WebApp.Controllers
             {
                 FirstName = fName,
                 LastName = lName,
-                GroupId = groupId
+                StudentsGroupId = groupId
             };
 
             string validationErrors = _validator.ValidateEntity(student);

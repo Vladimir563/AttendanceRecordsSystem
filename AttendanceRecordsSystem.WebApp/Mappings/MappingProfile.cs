@@ -12,7 +12,7 @@ namespace AttendanceRecordsSystem.WebApp.Mappings
             CreateMap<Student, StudentModel>()
                 .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
                 .ForMember(dest => dest.FullName, opt => opt.MapFrom(src => src.LastName + " " + src.FirstName))
-                .ForMember(dest => dest.GroupId, opt => opt.MapFrom(src => src.GroupId))
+                .ForMember(dest => dest.GroupId, opt => opt.MapFrom(src => src.StudentsGroupId))
                 .ForMember(dest => dest.Group, opt => opt.MapFrom(src => src.Group))
                 .ForMember(dest => dest.AttendedLections, opt => opt.MapFrom(src => src.AttendedLections));
 
@@ -32,7 +32,7 @@ namespace AttendanceRecordsSystem.WebApp.Mappings
 
             CreateMap<StudentsGroup, StudentsGroupModel>()
                 .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
-                .ForMember(dest => dest.GroupName, opt => opt.MapFrom(src => src.GroupName))
+                .ForMember(dest => dest.GroupName, opt => opt.MapFrom(src => src.Name))
                 .ForMember(dest => dest.Students, opt => opt.MapFrom(src => src.Students));
         }
     }

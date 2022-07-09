@@ -9,7 +9,7 @@ namespace AttendanceRecordsSystem.WebApp.Validators
         public StudentsGroupValidator()
         {
             RuleFor(x => x.Id).NotNull();
-            RuleFor(x => x.GroupName).NotEmpty().MaximumLength(5);
+            RuleFor(x => x.Name).NotEmpty().MaximumLength(5);
             RuleForEach(x => x.Students).NotNull();
         }
     }

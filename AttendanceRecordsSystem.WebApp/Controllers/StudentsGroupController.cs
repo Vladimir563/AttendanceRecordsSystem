@@ -49,7 +49,7 @@ namespace AttendanceRecordsSystem.WebApp.Controllers
         {
             StudentsGroup studentsGroup = new StudentsGroup()
             {
-                GroupName = groupName
+                Name = groupName
             };
 
             string validationErrors = _validator.ValidateEntity(studentsGroup);
