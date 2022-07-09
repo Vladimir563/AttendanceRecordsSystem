@@ -4,6 +4,7 @@ using AttendanceRecordsSystem.Infrastructure.Data.Repositories;
 using AttendanceRecordsSystem.Services;
 using Microsoft.Extensions.DependencyInjection;
 
+
 #pragma warning disable CS1591
 namespace AttendanceRecordsSystem.WebApp.Extensions.Registrators
 {
@@ -11,8 +12,7 @@ namespace AttendanceRecordsSystem.WebApp.Extensions.Registrators
     {
         public static IServiceCollection AddServices(this IServiceCollection services) 
         {
-            return services.AddScoped<IReport, JsonReport>()
-                           .AddScoped<IReport, XmlReport>()
+            return services.AddScoped<IReportGenerator<Report>, ReportGenerator>()
                            .AddScoped<IUnitOfWork, EFUnitOfWork>();
                            
         }

@@ -3,7 +3,6 @@ D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Authenticat
 D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Authentication\bin\Debug\netcoreapp3.1\AttendanceRecordsSystem.Authentication.runtimeconfig.dev.json
 D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Authentication\bin\Debug\netcoreapp3.1\AttendanceRecordsSystem.Authentication.dll
 D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Authentication\bin\Debug\netcoreapp3.1\AttendanceRecordsSystem.Authentication.pdb
-D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Authentication\obj\Debug\netcoreapp3.1\AttendanceRecordsSystem.Authentication.csproj.AssemblyReference.cache
 D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Authentication\obj\Debug\netcoreapp3.1\AttendanceRecordsSystem.Authentication.GeneratedMSBuildEditorConfig.editorconfig
 D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Authentication\obj\Debug\netcoreapp3.1\AttendanceRecordsSystem.Authentication.AssemblyInfoInputs.cache
 D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Authentication\obj\Debug\netcoreapp3.1\AttendanceRecordsSystem.Authentication.AssemblyInfo.cs
@@ -11,3 +10,4 @@ D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Authenticat
 D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Authentication\obj\Debug\netcoreapp3.1\AttendanceRecordsSystem.Authentication.dll
 D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Authentication\obj\Debug\netcoreapp3.1\AttendanceRecordsSystem.Authentication.pdb
 D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Authentication\obj\Debug\netcoreapp3.1\AttendanceRecordsSystem.Authentication.genruntimeconfig.cache
+D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Authentication\obj\Debug\netcoreapp3.1\AttendanceRecordsSystem.Authentication.csproj.AssemblyReference.cache

@@ -256,6 +256,9 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
+              "D:\\VSProjects\\Astone\\AttendanceRecordsSystem\\AttendanceRecordsSystem.Domain.Interfaces\\AttendanceRecordsSystem.Domain.Interfaces.csproj": {
+                "projectPath": "D:\\VSProjects\\Astone\\AttendanceRecordsSystem\\AttendanceRecordsSystem.Domain.Interfaces\\AttendanceRecordsSystem.Domain.Interfaces.csproj"
+              },
               "D:\\VSProjects\\Astone\\AttendanceRecordsSystem\\AttendanceRecordsSystem.Services.Interfaces\\AttendanceRecordsSystem.Services.Interfaces.csproj": {
                 "projectPath": "D:\\VSProjects\\Astone\\AttendanceRecordsSystem\\AttendanceRecordsSystem.Services.Interfaces\\AttendanceRecordsSystem.Services.Interfaces.csproj"
               }

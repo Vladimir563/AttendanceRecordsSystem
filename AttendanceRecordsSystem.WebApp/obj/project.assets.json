@@ -789,6 +789,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
+          "AttendanceRecordsSystem.Domain.Interfaces": "1.0.0",
           "AttendanceRecordsSystem.Services.Interfaces": "1.0.0"
         },
         "compile": {

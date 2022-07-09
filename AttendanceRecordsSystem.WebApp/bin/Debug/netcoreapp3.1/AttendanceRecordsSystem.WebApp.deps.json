@@ -1115,6 +1115,7 @@
       },
       "AttendanceRecordsSystem.Infrastructure.Business/1.0.0": {
         "dependencies": {
+          "AttendanceRecordsSystem.Domain.Interfaces": "1.0.0",
           "AttendanceRecordsSystem.Services.Interfaces": "1.0.0"
         },
         "runtime": {

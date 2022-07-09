@@ -8,10 +8,24 @@
     ".NETCoreApp,Version=v3.1": {
       "AttendanceRecordsSystem.Infrastructure.Business/1.0.0": {
         "dependencies": {
+          "AttendanceRecordsSystem.Domain.Interfaces": "1.0.0",
           "AttendanceRecordsSystem.Services.Interfaces": "1.0.0"
         },
         "runtime": {
           "AttendanceRecordsSystem.Infrastructure.Business.dll": {}
+        }
+      },
+      "AttendanceRecordsSystem.Domain.Core/1.0.0": {
+        "runtime": {
+          "AttendanceRecordsSystem.Domain.Core.dll": {}
+        }
+      },
+      "AttendanceRecordsSystem.Domain.Interfaces/1.0.0": {
+        "dependencies": {
+          "AttendanceRecordsSystem.Domain.Core": "1.0.0"
+        },
+        "runtime": {
+          "AttendanceRecordsSystem.Domain.Interfaces.dll": {}
         }
       },
       "AttendanceRecordsSystem.Services.Interfaces/1.0.0": {
@@ -23,6 +37,16 @@
   },
   "libraries": {
     "AttendanceRecordsSystem.Infrastructure.Business/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AttendanceRecordsSystem.Domain.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AttendanceRecordsSystem.Domain.Interfaces/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

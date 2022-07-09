@@ -1,8 +1,12 @@
 D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Infrastructure.Business\bin\Debug\netcoreapp3.1\AttendanceRecordsSystem.Infrastructure.Business.deps.json
 D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Infrastructure.Business\bin\Debug\netcoreapp3.1\AttendanceRecordsSystem.Infrastructure.Business.dll
 D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Infrastructure.Business\bin\Debug\netcoreapp3.1\AttendanceRecordsSystem.Infrastructure.Business.pdb
+D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Infrastructure.Business\bin\Debug\netcoreapp3.1\AttendanceRecordsSystem.Domain.Core.dll
+D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Infrastructure.Business\bin\Debug\netcoreapp3.1\AttendanceRecordsSystem.Domain.Interfaces.dll
 D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Infrastructure.Business\bin\Debug\netcoreapp3.1\AttendanceRecordsSystem.Services.Interfaces.dll
+D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Infrastructure.Business\bin\Debug\netcoreapp3.1\AttendanceRecordsSystem.Domain.Interfaces.pdb
 D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Infrastructure.Business\bin\Debug\netcoreapp3.1\AttendanceRecordsSystem.Services.Interfaces.pdb
+D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Infrastructure.Business\bin\Debug\netcoreapp3.1\AttendanceRecordsSystem.Domain.Core.pdb
 D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Infrastructure.Business\obj\Debug\netcoreapp3.1\AttendanceRecordsSystem.Infrastructure.Business.csproj.AssemblyReference.cache
 D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Infrastructure.Business\obj\Debug\netcoreapp3.1\AttendanceRecordsSystem.Infrastructure.Business.GeneratedMSBuildEditorConfig.editorconfig
 D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Infrastructure.Business\obj\Debug\netcoreapp3.1\AttendanceRecordsSystem.Infrastructure.Business.AssemblyInfoInputs.cache

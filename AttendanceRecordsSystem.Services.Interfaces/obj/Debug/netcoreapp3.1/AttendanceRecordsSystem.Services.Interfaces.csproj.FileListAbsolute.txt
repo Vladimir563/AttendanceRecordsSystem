@@ -7,3 +7,4 @@ D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Services.In
 D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Services.Interfaces\obj\Debug\netcoreapp3.1\AttendanceRecordsSystem.Services.Interfaces.csproj.CoreCompileInputs.cache
 D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Services.Interfaces\obj\Debug\netcoreapp3.1\AttendanceRecordsSystem.Services.Interfaces.dll
 D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Services.Interfaces\obj\Debug\netcoreapp3.1\AttendanceRecordsSystem.Services.Interfaces.pdb
+D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.Services.Interfaces\obj\Debug\netcoreapp3.1\AttendanceRecordsSystem.Services.Interfaces.csproj.AssemblyReference.cache
