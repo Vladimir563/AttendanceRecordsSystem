@@ -17,10 +17,18 @@ namespace AttendanceRecordsSystem.Infrastructure.Data.Repositories.Queries
             _db = context;
         }
 
-        public Lection Get(int id) => _db.Lections.Include(l => l.Student).Include(s => s.Lector).ToList().Find(l => l.Id == id);
+        public Lection Get(int id) => _db.Lections.Include(l => l.Student)
+                                                  .Include(l => l.Student.Group)
+                                                  .Include(s => s.Lector)
+                                                  .ToList().Find(l => l.Id == id);
 
-        public IEnumerable<Lection> Find(Func<Lection, bool> predicate) => _db.Lections.Include(l => l.Student).Include(s => s.Lector).Where(predicate).ToList();
+        public IEnumerable<Lection> Find(Func<Lection, bool> predicate) => _db.Lections.Include(l => l.Student)
+                                                                                       .Include(l => l.Student.Group)
+                                                                                       .Include(s => s.Lector)
+                                                                                       .Where(predicate).ToList();
 
-        public IEnumerable<Lection> GetAll() => _db.Lections.Include(l => l.Student).Include(s => s.Lector);
+        public IEnumerable<Lection> GetAll() => _db.Lections.Include(l => l.Student)
+                                                            .Include(l => l.Student.Group)
+                                                            .Include(s => s.Lector);
     }
 }
