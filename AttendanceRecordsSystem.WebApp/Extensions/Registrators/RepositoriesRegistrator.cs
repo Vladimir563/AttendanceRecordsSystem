@@ -5,7 +5,7 @@ using AttendanceRecordsSystem.Infrastructure.Data.Repositories.Queries;
 using Microsoft.Extensions.DependencyInjection;
 
 #pragma warning disable CS1591
-namespace AttendanceRecordsSystem.WebApp.Registrators
+namespace AttendanceRecordsSystem.WebApp.Extensions.Registrators
 {
     public static class RepositoriesRegistrator
     {

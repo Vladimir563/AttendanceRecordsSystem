@@ -27,9 +27,9 @@ namespace AttendanceRecordsSystem.WebApp.Controllers.Authentication
         /// <param name="userCredentials">The requested user for authentication.</param>
         /// <returns>The generated Bearer Token if the authentication succeeds, otherwise returns
         /// a client or server error.</returns>
-        /// <response code="200">If the authentication succeeds.</response>
-        /// <response code="401">If the authentication fails.</response>
-        /// <response code="500">If an exception is thrown.</response>
+        /// <response code="200">Успех</response>
+        /// <response code="401">Провал</response>
+        /// <response code="500">Исключение</response>
         [HttpPost]
         public IActionResult Authenticate([FromBody] UserCredentials userCredentials)
         {

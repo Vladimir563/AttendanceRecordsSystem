@@ -2,7 +2,7 @@
 
 
 #pragma warning disable CS1591
-namespace AttendanceRecordsSystem.WebApp.Authentication
+namespace AttendanceRecordsSystem.WebApp.Exceptions
 {
     public class InvalidCredentialsException : Exception
     {

@@ -3,12 +3,12 @@ using FluentValidation.Results;
 using System.Text;
 
 
-namespace AttendanceRecordsSystem.WebApp.Validators
+namespace AttendanceRecordsSystem.WebApp.Extensions
 {
     /// <summary>
     /// The extension method of the ASTON.STUDENT_ATTENDANCE_SYSTEM.BLL validator
     /// </summary>
-    public static class EntityValidatorExtension
+    public static class EntityValidatorExtensions
     {
         /// <summary>
         /// This method validate entity

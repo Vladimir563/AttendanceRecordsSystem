@@ -5,7 +5,7 @@ using System;
 
 
 #pragma warning disable CS1591
-namespace AttendanceRecordsSystem.WebApp.Authentication
+namespace AttendanceRecordsSystem.WebApp.Extensions
 {
     public static class AuthenticationExtensions
     {
