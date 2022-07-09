@@ -1,4 +1,9 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using AttendanceRecordsSystem.Authentication.Interfaces;
+using AttendanceRecordsSystem.Authentication.Models;
+using AttendanceRecordsSystem.Authentication.Repositories;
+using AttendanceRecordsSystem.Authentication.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using System;
@@ -10,7 +15,7 @@ namespace AttendanceRecordsSystem.WebApp.Extensions
     public static class AuthenticationExtensions
     {
         public static IServiceCollection AddAuthentication(this IServiceCollection services,
-            byte[] signingKey)
+            byte[] signingKey, IConfigurationSection settingsSection)
         {
             services.AddAuthentication(authOptions =>
             {
@@ -30,6 +35,13 @@ namespace AttendanceRecordsSystem.WebApp.Extensions
                         LifetimeValidator = LifetimeValidator
                     };
                 });
+
+            services.Configure<AppSettings>(settingsSection);
+            services.AddTransient<IUserCommandsRepository, UserCommandsRepository>();
+            services.AddTransient<IUserQueriesRepository, UserQueriesRepository>();
+            services.AddTransient<UserService>();
+            services.AddTransient<AuthenticationService>();
+            services.AddTransient<TokenService>();
 
             return services;
         }

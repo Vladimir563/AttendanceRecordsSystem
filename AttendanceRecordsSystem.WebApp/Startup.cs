@@ -1,5 +1,4 @@
 using AttendanceRecordsSystem.Infrastructure.Data;
-using AttendanceRecordsSystem.WebApp.Registrators;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -7,8 +6,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Serilog;
-using AttendanceRecordsSystem.WebApp.Authentication;
 using System.Text;
+using AttendanceRecordsSystem.WebApp.Extensions.Registrators;
+using AttendanceRecordsSystem.WebApp.Extensions;
+using AttendanceRecordsSystem.Authentication.Models;
+using AttendanceRecordsSystem.Authentication.EFCore;
 
 
 #pragma warning disable CS1591
@@ -27,6 +29,7 @@ namespace AttendanceRecordsSystem.WebApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<AttendanceRecordsSystemContext>();
+            services.AddDbContext<AuthenticationContext>();
 
             services.AddServices()
                     .AddRepositories()
@@ -39,15 +42,9 @@ namespace AttendanceRecordsSystem.WebApp
             IConfigurationSection settingsSection = Configuration.GetSection("AppSettings");
             AppSettings settings = settingsSection.Get<AppSettings>();
             byte[] signingKey = Encoding.UTF8.GetBytes(settings.EncryptionKey);
-            services.AddAuthentication(signingKey);
+            services.AddAuthentication(signingKey, settingsSection);
 
             services.AddSwaggerDocumentation();
-
-            services.Configure<AppSettings>(settingsSection);
-            services.AddTransient<UserRepository>();
-            services.AddTransient<UserService>();
-            services.AddTransient<AuthenticationService>();
-            services.AddTransient<TokenService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

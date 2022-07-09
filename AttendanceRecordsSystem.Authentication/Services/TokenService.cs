@@ -1,12 +1,12 @@
-﻿using Microsoft.Extensions.Options;
+﻿using AttendanceRecordsSystem.Authentication.Models;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Text;
 
 
-#pragma warning disable CS1591
-namespace AttendanceRecordsSystem.WebApp.Authentication
+namespace AttendanceRecordsSystem.Authentication.Services
 {
     public class TokenService
     {

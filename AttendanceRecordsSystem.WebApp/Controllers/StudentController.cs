@@ -1,5 +1,6 @@
 ﻿using AttendanceRecordsSystem.Domain.Core;
 using AttendanceRecordsSystem.Domain.Interfaces;
+using AttendanceRecordsSystem.WebApp.Extensions;
 using AttendanceRecordsSystem.WebApp.Models;
 using AttendanceRecordsSystem.WebApp.Validators;
 using AutoMapper;

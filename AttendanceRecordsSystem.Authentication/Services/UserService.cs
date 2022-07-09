@@ -1,20 +1,22 @@
-﻿
+﻿using AttendanceRecordsSystem.Authentication.Exceptions;
+using AttendanceRecordsSystem.Authentication.Interfaces;
+using AttendanceRecordsSystem.Authentication.Models;
 
-#pragma warning disable CS1591
-namespace AttendanceRecordsSystem.WebApp.Authentication
+
+namespace AttendanceRecordsSystem.Authentication.Services
 {
     public class UserService
     {
-        private readonly UserRepository userRepository;
+        private readonly IUserQueriesRepository _queriesRepository;
 
-        public UserService(UserRepository userRepository)
+        public UserService(IUserQueriesRepository queriesRepository)
         {
-            this.userRepository = userRepository;
+            _queriesRepository = queriesRepository;
         }
 
         public void ValidateCredentials(UserCredentials userCredentials)
         {
-            User user = userRepository.GetUser(userCredentials.Username);
+            User user = _queriesRepository.Get(userCredentials.Username);
             bool isValid = user != null && AreValidCredentials(userCredentials, user);
 
             if (!isValid)

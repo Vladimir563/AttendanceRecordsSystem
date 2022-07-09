@@ -11,7 +11,7 @@ namespace AttendanceRecordsSystem.Infrastructure.Data.Repositories
     {
         private bool disposed = false;
 
-        private AttendanceRecordsSystemContext _db;
+        private readonly AttendanceRecordsSystemContext _db;
 
         private StudentsQueriesRepository _studentsQueriesRepository;
         private StudentsCommandsRepository _studentsCommandsRepository;

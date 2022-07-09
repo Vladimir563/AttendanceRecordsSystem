@@ -1,4 +1,6 @@
-﻿using AttendanceRecordsSystem.WebApp.Authentication;
+﻿using AttendanceRecordsSystem.Authentication.Exceptions;
+using AttendanceRecordsSystem.Authentication.Models;
+using AttendanceRecordsSystem.Authentication.Services;
 using Microsoft.AspNetCore.Mvc;
 
 

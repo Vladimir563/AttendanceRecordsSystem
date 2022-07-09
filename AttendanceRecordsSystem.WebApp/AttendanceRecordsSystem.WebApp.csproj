@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AttendanceRecordsSystem.Authentication\AttendanceRecordsSystem.Authentication.csproj" />
     <ProjectReference Include="..\AttendanceRecordsSystem.Domain.Core\AttendanceRecordsSystem.Domain.Core.csproj" />
     <ProjectReference Include="..\AttendanceRecordsSystem.Domain.Interfaces\AttendanceRecordsSystem.Domain.Interfaces.csproj" />
     <ProjectReference Include="..\AttendanceRecordsSystem.Infrastructure.Business\AttendanceRecordsSystem.Infrastructure.Business.csproj" />

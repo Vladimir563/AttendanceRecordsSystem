@@ -6,7 +6,7 @@ namespace AttendanceRecordsSystem.Infrastructure.Data.Repositories.Commands
 {
     public class LectionsCommandsRepository : ICommandsRepository<Lection>
     {
-        private AttendanceRecordsSystemContext _db;
+        private readonly AttendanceRecordsSystemContext _db;
 
         public LectionsCommandsRepository(AttendanceRecordsSystemContext context)
         {

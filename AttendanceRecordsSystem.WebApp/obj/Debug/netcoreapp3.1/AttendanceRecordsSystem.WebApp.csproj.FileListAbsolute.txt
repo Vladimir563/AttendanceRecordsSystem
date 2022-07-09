@@ -32,6 +32,7 @@ D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.WebApp\bin\
 D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
 D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
 D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.WebApp\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Abstractions.dll
 D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.WebApp\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
 D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.WebApp\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
 D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.WebApp\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
@@ -57,11 +58,13 @@ D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.WebApp\bin\
 D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.WebApp\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
 D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.WebApp\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
 D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.WebApp\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
+D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.WebApp\bin\Debug\netcoreapp3.1\AttendanceRecordsSystem.Authentication.dll
 D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.WebApp\bin\Debug\netcoreapp3.1\AttendanceRecordsSystem.Domain.Core.dll
 D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.WebApp\bin\Debug\netcoreapp3.1\AttendanceRecordsSystem.Domain.Interfaces.dll
 D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.WebApp\bin\Debug\netcoreapp3.1\AttendanceRecordsSystem.Infrastructure.Business.dll
 D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.WebApp\bin\Debug\netcoreapp3.1\AttendanceRecordsSystem.Infrastructure.Data.dll
 D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.WebApp\bin\Debug\netcoreapp3.1\AttendanceRecordsSystem.Services.Interfaces.dll
+D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.WebApp\bin\Debug\netcoreapp3.1\AttendanceRecordsSystem.Authentication.pdb
 D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.WebApp\bin\Debug\netcoreapp3.1\AttendanceRecordsSystem.Domain.Core.pdb
 D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.WebApp\bin\Debug\netcoreapp3.1\AttendanceRecordsSystem.Domain.Interfaces.pdb
 D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.WebApp\bin\Debug\netcoreapp3.1\AttendanceRecordsSystem.Infrastructure.Business.pdb

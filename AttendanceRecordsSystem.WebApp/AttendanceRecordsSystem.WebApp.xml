@@ -9,22 +9,22 @@
             Provides authentication for users.
             </summary>
         </member>
-        <member name="M:AttendanceRecordsSystem.WebApp.Controllers.Authentication.AuthenticationController.#ctor(AttendanceRecordsSystem.WebApp.Authentication.AuthenticationService)">
+        <member name="M:AttendanceRecordsSystem.WebApp.Controllers.Authentication.AuthenticationController.#ctor(AttendanceRecordsSystem.Authentication.Services.AuthenticationService)">
             <summary>
             Constructs the controller state by initializing the `authenticationService` field.
             </summary>
             <param name="authenticationService">Provides authentication for a user.</param>
         </member>
-        <member name="M:AttendanceRecordsSystem.WebApp.Controllers.Authentication.AuthenticationController.Authenticate(AttendanceRecordsSystem.WebApp.Authentication.UserCredentials)">
+        <member name="M:AttendanceRecordsSystem.WebApp.Controllers.Authentication.AuthenticationController.Authenticate(AttendanceRecordsSystem.Authentication.Models.UserCredentials)">
             <summary>
             Authenticate the requested user.
             </summary>
             <param name="userCredentials">The requested user for authentication.</param>
             <returns>The generated Bearer Token if the authentication succeeds, otherwise returns
             a client or server error.</returns>
-            <response code="200">If the authentication succeeds.</response>
-            <response code="401">If the authentication fails.</response>
-            <response code="500">If an exception is thrown.</response>
+            <response code="200">Успех</response>
+            <response code="401">Провал</response>
+            <response code="500">Исключение</response>
         </member>
         <member name="T:AttendanceRecordsSystem.WebApp.Controllers.LectionController">
             <summary>
@@ -193,12 +193,12 @@
             <param name="id">Id группы студентов</param>
             <returns></returns>
         </member>
-        <member name="T:AttendanceRecordsSystem.WebApp.Validators.EntityValidatorExtension">
+        <member name="T:AttendanceRecordsSystem.WebApp.Extensions.EntityValidatorExtensions">
             <summary>
             The extension method of the ASTON.STUDENT_ATTENDANCE_SYSTEM.BLL validator
             </summary>
         </member>
-        <member name="M:AttendanceRecordsSystem.WebApp.Validators.EntityValidatorExtension.ValidateEntity``1(FluentValidation.IValidator{``0},``0)">
+        <member name="M:AttendanceRecordsSystem.WebApp.Extensions.EntityValidatorExtensions.ValidateEntity``1(FluentValidation.IValidator{``0},``0)">
             <summary>
             This method validate entity
             </summary>

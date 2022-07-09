@@ -9,7 +9,7 @@ namespace AttendanceRecordsSystem.Infrastructure.Data.Repositories.Queries
 {
     public class LectionsQueriesRepository : IQueriesRepository<Lection>
     { 
-        private AttendanceRecordsSystemContext _db;
+        private readonly AttendanceRecordsSystemContext _db;
 
         public LectionsQueriesRepository(AttendanceRecordsSystemContext context)
         {
