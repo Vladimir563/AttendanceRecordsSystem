@@ -37,7 +37,8 @@ namespace AttendanceRecordsSystem.WebApp
 
             services.AddAutoMapper(typeof(Startup).Assembly);
 
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(options =>
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
             IConfigurationSection settingsSection = Configuration.GetSection("AppSettings");
             AppSettings settings = settingsSection.Get<AppSettings>();

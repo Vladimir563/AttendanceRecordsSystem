@@ -84,7 +84,7 @@ namespace AttendanceRecordsSystem.WebApp.Controllers
 
             if (lector is null) 
             {
-                return NotFound(ValidationMessageGenerator.GetFindFailureMessage("Лектор"));
+                return NotFound(ValidationMessageGenerator.GetNotFoundMessage("Лектор"));
             }
 
             _repository.LectorsCommands.Update(newLector, id);
@@ -123,7 +123,7 @@ namespace AttendanceRecordsSystem.WebApp.Controllers
 
             if (lector is null)
             {
-                return NotFound(ValidationMessageGenerator.GetFindFailureMessage("Лектор"));
+                return NotFound(ValidationMessageGenerator.GetNotFoundMessage("Лектор"));
             }
 
             return Ok(Json(_mapper.Map<LectorModel>(_repository.LectorsQueries.Get(id))));

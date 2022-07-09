@@ -9,7 +9,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace AttendanceRecordsSystem.Authentication.Migrations
 {
     [DbContext(typeof(AuthenticationContext))]
-    [Migration("20220709103131_AuthenticationInit")]
+    [Migration("20220709125828_AuthenticationInit")]
     partial class AuthenticationInit
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

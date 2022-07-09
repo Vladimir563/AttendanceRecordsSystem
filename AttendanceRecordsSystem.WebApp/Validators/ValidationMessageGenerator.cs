@@ -8,7 +8,7 @@ namespace AttendanceRecordsSystem.WebApp.Validators
 
         public static string GetCreateFailureMessage(string entityName) => $"{entityName} не был создан";
 
-        public static string GetFindFailureMessage(string entityName) => $"{entityName} не найден";
+        public static string GetNotFoundMessage(string entityName) => $"{entityName} не найден";
 
         public static string GetUpdateSuccessMessage(string entityName) => $"{entityName} успешно обновлён";
 

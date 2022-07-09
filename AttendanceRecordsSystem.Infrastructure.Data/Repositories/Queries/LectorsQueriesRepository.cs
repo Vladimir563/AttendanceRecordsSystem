@@ -1,5 +1,6 @@
 ﻿using AttendanceRecordsSystem.Domain.Core;
 using AttendanceRecordsSystem.Domain.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,10 +17,10 @@ namespace AttendanceRecordsSystem.Infrastructure.Data.Repositories.Queries
             _db = context;
         }
 
-        public Lector Get(int id) => _db.Lectors.Find(id);
+        public Lector Get(int id) => _db.Lectors.Include(l => l.Lections).ToList().Find(s => s.Id == id);
 
-        public IEnumerable<Lector> Find(Func<Lector, bool> predicate) => _db.Lectors.Where(predicate).ToList();
+        public IEnumerable<Lector> Find(Func<Lector, bool> predicate) => _db.Lectors.Include(l => l.Lections).Where(predicate).ToList();
 
-        public IEnumerable<Lector> GetAll() => _db.Lectors;
+        public IEnumerable<Lector> GetAll() => _db.Lectors.Include(l => l.Lections);
     }
 }

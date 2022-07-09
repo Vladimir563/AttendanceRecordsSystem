@@ -10,7 +10,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace AttendanceRecordsSystem.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(AttendanceRecordsSystemContext))]
-    [Migration("20220702131258_InitialMigration")]
+    [Migration("20220709140116_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

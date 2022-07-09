@@ -65,7 +65,7 @@ namespace AttendanceRecordsSystem.WebApp.Controllers
 
             Lector lector = _repository.LectorsQueries.Get(lectorId);
 
-            if (lector is null) return NotFound($"{ValidationMessageGenerator.GetFindFailureMessage("Лектор")} \n{Json(lector)}");
+            if (lector is null) return NotFound($"{ValidationMessageGenerator.GetNotFoundMessage("Лектор")} \n{Json(lector)}");
 
             lection.Lector = lector;
 
@@ -88,12 +88,12 @@ namespace AttendanceRecordsSystem.WebApp.Controllers
 
             if (lection is null)
             {
-                return NotFound(ValidationMessageGenerator.GetFindFailureMessage("Лекция"));
+                return NotFound(ValidationMessageGenerator.GetNotFoundMessage("Лекция"));
             }
 
             _repository.LectionsCommands.Update(newLection, id);
 
-            return Ok($"{ValidationMessageGenerator.GetUpdateSuccessMessage("Лекция")} \n{Json(lection)}");
+            return Ok($"{ValidationMessageGenerator.GetUpdateSuccessMessage("Лекция")} \n{Json(newLection)}");
         }
 
         /// <summary>
@@ -127,7 +127,7 @@ namespace AttendanceRecordsSystem.WebApp.Controllers
 
             if (lection is null)
             {
-                return NotFound(ValidationMessageGenerator.GetFindFailureMessage("Лекция"));
+                return NotFound(ValidationMessageGenerator.GetNotFoundMessage("Лекция"));
             }
 
             return Ok(Json(_mapper.Map<LectionModel>(_repository.LectionsQueries.Get(id))));

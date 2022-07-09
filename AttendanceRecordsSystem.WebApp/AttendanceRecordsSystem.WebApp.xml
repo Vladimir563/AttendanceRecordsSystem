@@ -153,6 +153,23 @@
             <param name="id">Id студента</param>
             <returns></returns>
         </member>
+        <member name="T:AttendanceRecordsSystem.WebApp.Controllers.StudentsAttendanceReportController">
+            <summary>
+            Контроллер для получения отчётов
+            </summary>
+        </member>
+        <member name="M:AttendanceRecordsSystem.WebApp.Controllers.StudentsAttendanceReportController.GetReport(System.DateTime,System.DateTime,System.String,System.String,System.String,System.String)">
+            <summary>
+            Получает отчёт по заданным критериям
+            </summary>
+            <param name="from">Дата от (формат: год/месяц/день)</param>
+            <param name="to">Дата до (формат: год/месяц/день)</param>
+            <param name="lectionTittle">Имя лекции</param>
+            <param name="groupName">Имя группы студентов</param>
+            <param name="lectorName">Имя лектора</param>
+            <param name="studentName">Имя студента</param>
+            <returns></returns>
+        </member>
         <member name="T:AttendanceRecordsSystem.WebApp.Controllers.StudentsGroupController">
             <summary>
             Контроллер для манипуляций с моделью группы студентов

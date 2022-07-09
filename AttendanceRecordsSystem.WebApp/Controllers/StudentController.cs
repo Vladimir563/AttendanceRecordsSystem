@@ -63,7 +63,7 @@ namespace AttendanceRecordsSystem.WebApp.Controllers
 
             StudentsGroup sGroup = _repository.StudentsGroupsQueries.Get(groupId);
 
-            if (sGroup is null) return NotFound($"{ValidationMessageGenerator.GetFindFailureMessage("Группа студента")} \n{Json(sGroup)}");
+            if (sGroup is null) return NotFound($"{ValidationMessageGenerator.GetNotFoundMessage("Группа студента")} \n{Json(sGroup)}");
 
             student.Group = sGroup;
 
@@ -86,7 +86,7 @@ namespace AttendanceRecordsSystem.WebApp.Controllers
 
             if (student is null)
             {
-                return NotFound(ValidationMessageGenerator.GetFindFailureMessage("Студент"));
+                return NotFound(ValidationMessageGenerator.GetNotFoundMessage("Студент"));
             }
 
             _repository.StudentsCommands.Update(newStudent, id);
@@ -125,7 +125,7 @@ namespace AttendanceRecordsSystem.WebApp.Controllers
 
             if (student is null)
             {
-                return NotFound(ValidationMessageGenerator.GetFindFailureMessage("Студент"));
+                return NotFound(ValidationMessageGenerator.GetNotFoundMessage("Студент"));
             }
 
             return Ok(Json(_mapper.Map<StudentModel>(_repository.StudentsQueries.Get(id))));

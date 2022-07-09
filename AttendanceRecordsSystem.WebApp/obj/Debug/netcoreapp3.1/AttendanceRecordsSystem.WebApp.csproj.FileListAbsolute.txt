@@ -13,6 +13,8 @@ D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.WebApp\bin\
 D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.WebApp\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.WebApp\bin\Debug\netcoreapp3.1\FluentValidation.dll
 D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.WebApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.WebApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.WebApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.WebApp\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
 D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.WebApp\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
 D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.WebApp\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
@@ -40,6 +42,7 @@ D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.WebApp\bin\
 D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.WebApp\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
 D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.WebApp\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
 D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.WebApp\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.WebApp\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
 D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.WebApp\bin\Debug\netcoreapp3.1\Npgsql.dll
 D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.WebApp\bin\Debug\netcoreapp3.1\Npgsql.EntityFrameworkCore.PostgreSQL.dll
 D:\VSProjects\Astone\AttendanceRecordsSystem\AttendanceRecordsSystem.WebApp\bin\Debug\netcoreapp3.1\Serilog.dll
